@@ -1,0 +1,48 @@
+.image{
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: white;
+}
+.przycisk-start {
+    font-family: "Monda", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 5% 13%;
+    background-color: #D7CB63;
+    border: solid #D7CB63 2px;
+    margin-bottom: 8rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+    color: #000;
+    transition: color 0.3s ease; 
+}
+.przycisk-start:hover {
+    border: solid white 2px; 
+    color: white; 
+    background-color: transparent; 
+}
+.text-center{
+    gap: 30px;
+}
+.przycisk-ikona{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer; 
+}
+.strzalka {
+    font-weight: 900; 
+    font-size: 16px;
+}

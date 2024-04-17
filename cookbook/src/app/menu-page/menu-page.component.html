@@ -1,0 +1,24 @@
+<div class="container-fluid menu-page">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="gorne-rozstawienie">
+                <div class="slonce"><img src="../assets/images/Sun.png" alt=""></div>
+                <div class="lupa"><img src="../assets/images/Search.png" alt=""></div>
+            </div>
+            <div class="dolne-rozstawienie">
+            <div class="srodkowe-rozstawienie col-md-12">
+                    What would you like to cook?
+            </div>
+            <div class="col-md-12 mt-4" routerLink="/sniadanie">
+                <app-meal [mealName]="'Breakfast'" [backgroundImageUrl]="'../assets/images/sniadanie.png'"></app-meal>
+            </div>
+            <div class="col-md-12 mt-3" routerLink="/obiad">
+                <app-meal [mealName]="'Dinner'" [backgroundImageUrl]="'../assets/images/obiad.png'"></app-meal>
+            </div>
+            <div class="col-md-12 mt-3" routerLink="/kolacja">
+                <app-meal [mealName]="'Supper'" [backgroundImageUrl]="'../assets/images/kolacja.png'" [mealTextColor]="'white'"></app-meal>
+            </div>            
+            </div>
+        </div>
+    </div>
+</div>
