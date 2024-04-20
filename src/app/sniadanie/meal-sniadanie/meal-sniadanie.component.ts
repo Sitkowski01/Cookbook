@@ -9,6 +9,5 @@ export class MealSniadanieComponent {
   @Input() mealName: string = '';
   @Input() backgroundImageUrl: string = '';
   @Input() mealTextColor: string = 'white';
-  @Input() isDarkMode: boolean = false;
-  
+  @Input() isBrightkMode: boolean = false;
 }

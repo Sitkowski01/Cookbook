@@ -8,35 +8,35 @@ import { Component, Input } from '@angular/core';
 export class ObiadComponent {
   selectedIndex: number = 0;
   items: string[] = ['All','Continental', 'Regional', 'American', 'Japanese','Italian','Mediteranan','Asian'];
-  meals: { name: string, cuisine: string }[] = [
-    { name: 'Beetroot-soup', cuisine: 'Regional' },
-    { name: 'Hunters-stew', cuisine: 'Regional' },
-    { name: 'Cabbage-rolls', cuisine: 'Regional' },
-    { name: 'Mushroom-soup', cuisine: 'Regional' },
-    { name: 'Dumplings', cuisine: 'Regional' },
-    { name: 'Silesian-noodles', cuisine: 'Regional' },
-    { name: 'Pork-cutlet', cuisine: 'Regional' },
-    { name: 'Sour-rye-soup', cuisine: 'Regional' },
-    { name: 'Cheeseburger', cuisine: 'American' },
-    { name: 'Pork-ribbs', cuisine: 'American' },
-    { name: 'Ramen', cuisine: 'Japanese' },
-    { name: 'Donburi', cuisine: 'Japanese' },
-    { name: 'Pizza', cuisine: 'Italian' },
-    { name: 'Risotto', cuisine: 'Italian' },
-    { name: 'Spaghetti', cuisine: 'Italian' },
-    { name: 'Greek-salad', cuisine: 'Mediteranan' },
-    { name: 'Trout', cuisine: 'Mediteranan' },
-    { name: 'Focaccia', cuisine: 'Mediteranan' },
-    { name: 'Kung-pao', cuisine: 'Asian' },
-    { name: 'Pad-thai', cuisine: 'Asian' },
-    { name: 'Sushi', cuisine: 'Asian' },
-    { name: 'Ratatouille', cuisine: 'Continental' },
-    { name: 'Lasagne', cuisine: 'Continental' },
-    { name: 'Paella', cuisine: 'Continental' },
-    { name: 'Coq-au-vin', cuisine: 'Continental' },
+  meals: { name: string, cuisine: string, link: string }[] = [
+    { name: 'Beetroot-soup', cuisine: 'Regional', link: '/beetroot-soup-details' },
+    { name: 'Hunters-stew', cuisine: 'Regional', link: '/hunters-stew-details' },
+    { name: 'Cabbage-rolls', cuisine: 'Regional', link: '/cabbage-rolls-details' },
+    { name: 'Mushroom-soup', cuisine: 'Regional', link: '/mushroom-soup-details' },
+    { name: 'Dumplings', cuisine: 'Regional', link: '/dumplings-details' },
+    { name: 'Silesian-noodles', cuisine: 'Regional', link: '/silesian-noodles-details' },
+    { name: 'Pork-cutlet', cuisine: 'Regional', link: '/pork-cutlet-details' },
+    { name: 'Sour-rye-soup', cuisine: 'Regional', link: '/sour-rye-soup-details' },
+    { name: 'Cheeseburger', cuisine: 'American', link: '/cheeseburger-details' },
+    { name: 'Pork-ribbs', cuisine: 'American', link: '/pork-ribbs-details' },
+    { name: 'Ramen', cuisine: 'Japanese', link: '/ramen-details' },
+    { name: 'Donburi', cuisine: 'Japanese', link: '/donburi-details' },
+    { name: 'Pizza', cuisine: 'Italian', link: '/pizza-details' },
+    { name: 'Risotto', cuisine: 'Italian', link: '/risotto-details' },
+    { name: 'Spaghetti', cuisine: 'Italian', link: '/spaghetti-details' },
+    { name: 'Greek-salad', cuisine: 'Mediteranan', link: '/greek-salad-details' },
+    { name: 'Trout', cuisine: 'Mediteranan', link: '/trout-details' },
+    { name: 'Focaccia', cuisine: 'Mediteranan', link: '/focaccia-details' },
+    { name: 'Kung-pao', cuisine: 'Asian', link: '/kung-pao-details' },
+    { name: 'Pad-thai', cuisine: 'Asian', link: '/pad-thai-details' },
+    { name: 'Sushi', cuisine: 'Asian', link: '/sushi-details' },
+    { name: 'Ratatouille', cuisine: 'Continental', link: '/ratatouille-details' },
+    { name: 'Lasagne', cuisine: 'Continental', link: '/lasagne-details' },
+    { name: 'Paella', cuisine: 'Continental', link: '/paella-details' },
+    { name: 'Coq-au-vin', cuisine: 'Continental', link: '/coq-au-vin-details' },
   ];
 
-  isDarkMode: boolean = false;
+  isBrightMode: boolean = false;
   searchQuery: string = '';
   filteredMeals: { name: string, cuisine: string }[] = this.meals;
   isSearching: boolean = false;
@@ -76,7 +76,7 @@ export class ObiadComponent {
   }
 
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
+    this.isBrightMode = !this.isBrightMode;
   }
 
   getBackgroundImageUrl(mealName: string): string {

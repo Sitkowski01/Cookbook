@@ -1,0 +1,43 @@
+<div class="container-fluid menu-page" [ngClass]="{'bright-mode': isBrightMode}">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="gorne-rozstawienie">
+                <div class="slonce" (click)="toggleTheme()"><img src="../assets/images/Sun.png" alt=""></div>
+                <div class="wybrany-posilek">Breakfast</div>
+                <div class="lupa" (click)="toggleSearch()">
+                    <img src="../assets/images/Search.png" alt="">
+                </div>
+            </div>
+            
+            <!-- Karuzela -->
+            <!-- <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem;" *ngIf="!isSearching">
+                <div class="element-karuzeli" *ngFor="let item of items; let i = index" 
+                    [ngClass]="{'active': isActive(i), 'inactive': !isActive(i)}" 
+                    (click)="selectItem(i); filterByCuisine(item)">
+                    {{ item }}
+                </div>
+            </div>
+             -->
+            <div class="formularz-wyszukiwania" *ngIf="isSearching">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" [(ngModel)]="searchQuery" placeholder="Search meal..." class="form-control rounded-input" (input)="searchItems()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row mt-4" style="overflow-y: auto; max-height: 620px;">
+                <ng-container *ngFor="let meal of filteredMeals; let i = index">
+                    <div class="col-6 mt-3">
+                        <app-meal-sniadanie [backgroundImageUrl]="getBackgroundImageUrl(meal.name)" [routerLink]="meal.link" [mealName]="meal.name" [isBrightkMode]="isBrightMode"></app-meal-sniadanie>
+                    </div>
+                    <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+                </ng-container>
+            </div>
+        
+        </div>
+    </div>
+</div>

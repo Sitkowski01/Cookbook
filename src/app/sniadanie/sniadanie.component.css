@@ -76,27 +76,27 @@
     border-radius: 20px;
     padding: 7px;
 }
-/* Dark mode */
+/* bright mode */
 
-.dark-mode {
+.bright-mode {
     background-color: #fff;
   }
   
- .dark-mode .wybrany-posilek{
+ .bright-mode .wybrany-posilek{
     color: black;
  }
 
- .dark-mode .element-karuzeli{
+ .bright-mode .element-karuzeli{
     color: #8d8a8a;
  }
 
- .dark-mode .active{
+ .bright-mode .active{
     color: black;
  }
-.dark-mode .slonce{
+.bright-mode .slonce{
     background-color: #8d8a8a;
 }
 
-.dark-mode .lupa{
+.bright-mode .lupa{
     background-color: #8d8a8a;
 }

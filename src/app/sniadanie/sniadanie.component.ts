@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-sniadanie',
@@ -8,35 +8,35 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class SniadanieComponent {
   selectedIndex: number = 0;
   items: string[] = ['All','Continental', 'Regional', 'American', 'Japanese','Italian','Mediteranan','Asian'];
-  meals: { name: string, cuisine: string }[] = [
-    { name: 'Shakshouka', cuisine: 'Asian' },
-    { name: 'Omelette', cuisine: 'American' },
-    { name: 'Eggs', cuisine: 'Regional' },
-    { name: 'Crepes', cuisine: 'Regional' },
-    { name: 'Pancakes', cuisine: 'American' },
-    { name: 'Panini', cuisine: 'Italian' },
-    { name: 'Sandwiches', cuisine: 'Regional' },
-    { name: 'Scrambled-eggs', cuisine: 'Regional' },
-    { name: 'Rise-with-egg', cuisine: 'Japanese' },
-    { name: 'Toasts', cuisine: 'American' },
-    { name: 'Miso', cuisine: 'Japanese' },
-    { name: 'Okonomiyaki', cuisine: 'Japanese' },
-    { name: 'Croissant', cuisine: 'Italian' },
-    { name: 'Bread-with-oil', cuisine: 'Mediteranan' },
-    { name: 'Yoghurt', cuisine: 'Mediteranan' },
-    { name: 'Dim-sum', cuisine: 'Asian' },
-    { name: 'Wonton', cuisine: 'Asian' },
-    { name: 'Boba-tea', cuisine: 'Asian' },
-    { name: 'Shrimps', cuisine: 'Asian' },
-    { name: 'Bruschetta', cuisine: 'Italian' },
-    { name: 'Quiche', cuisine: 'Continental' },
-    { name: 'Muesli', cuisine: 'Continental' },
-    { name: 'Oatmeal', cuisine: 'Continental' },
-  ];
+  meals: { name: string, cuisine: string, link: string}[] = [
+    { name: 'Shakshouka', cuisine: 'Asian', link: '/shakshouka-details' },
+    { name: 'Omelette', cuisine: 'American', link: '/omelette-details' },
+    { name: 'Eggs', cuisine: 'Regional', link: '/eggs-details' },
+    { name: 'Crepes', cuisine: 'Regional', link: '/crepes-details' },
+    { name: 'Pancakes', cuisine: 'American', link: '/pancakes-details' },
+    { name: 'Panini', cuisine: 'Italian', link: '/panini-details' },
+    { name: 'Sandwiches', cuisine: 'Regional', link: '/sandwiches-details' },
+    { name: 'Scrambled-eggs', cuisine: 'Regional', link: '/scrambled-eggs-details' },
+    { name: 'Rise-with-egg', cuisine: 'Japanese', link: '/rise-with-egg-details' },
+    { name: 'Toasts', cuisine: 'American', link: '/toasts-details' },
+    { name: 'Miso', cuisine: 'Japanese', link: '/miso-details' },
+    { name: 'Okonomiyaki', cuisine: 'Japanese', link: '/okonomiyaki-details' },
+    { name: 'Croissant', cuisine: 'Italian', link: '/croissant-details' },
+    { name: 'Bread-with-oil', cuisine: 'Mediteranan', link: '/bread-with-oil-details' },
+    { name: 'Yoghurt', cuisine: 'Mediteranan', link: '/yoghurt-details' },
+    { name: 'Dim-sum', cuisine: 'Asian', link: '/dim-sum-details' },
+    { name: 'Wonton', cuisine: 'Asian', link: '/wonton-details' },
+    { name: 'Boba-tea', cuisine: 'Asian', link: '/boba-tea-details' },
+    { name: 'Shrimps', cuisine: 'Asian', link: '/shrimps-details' },
+    { name: 'Bruschetta', cuisine: 'Italian', link: '/bruschetta-details' },
+    { name: 'Quiche', cuisine: 'Continental', link: '/quiche-details' },
+    { name: 'Muesli', cuisine: 'Continental', link: '/muesli-details' },
+    { name: 'Oatmeal', cuisine: 'Continental', link: '/oatmeal-details' },
+];
 
-  isDarkMode: boolean = false;
+  isBrightMode: boolean = false;
   searchQuery: string = '';
-  filteredMeals: { name: string, cuisine: string }[] = this.meals;
+  filteredMeals: { name: string, cuisine: string, link: string }[] = this.meals;
   isSearching: boolean = false;
 
   selectItem(index: number) {
@@ -50,7 +50,7 @@ export class SniadanieComponent {
   toggleSearch() {
     this.isSearching = !this.isSearching;
     if (this.isSearching) {
-      this.searchItems(); // Dodane wywołanie metody searchItems()
+      this.searchItems();
     } else {
       this.searchQuery = '';
       this.searchItems();
@@ -74,7 +74,7 @@ export class SniadanieComponent {
   }
 
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
+    this.isBrightMode = !this.isBrightMode;
   }
 
   getBackgroundImageUrl(mealName: string): string {

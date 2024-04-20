@@ -34,7 +34,7 @@ export class KolacjaComponent {
     { name: 'Sweet-crepes', cuisine: 'Regional' },
   ];
 
-  isDarkMode: boolean = false;
+  isBrightkMode: boolean = false;
   searchQuery: string = '';
   filteredMeals: { name: string, cuisine: string }[] = this.meals;
   isSearching: boolean = false;
@@ -74,7 +74,7 @@ export class KolacjaComponent {
   }
 
   toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
+    this.isBrightkMode = !this.isBrightkMode;
   }
 
   getBackgroundImageUrl(mealName: string): string {
