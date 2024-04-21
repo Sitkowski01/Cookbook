@@ -7,18 +7,18 @@ import { Component } from '@angular/core';
 })
 export class MisoDetailsComponent {
   selectedIndex: number = 0;
-  items: string[] = ['All','Continental', 'Regional', 'American', 'Japanese','Italian','Mediteranan','Asian'];
-  meals: { name: string, cuisine: string, link: string}[] = [
-    { name: 'Shakshouka', cuisine: 'Asian', link: '/shakshouka-details' },
-    { name: 'Omelette', cuisine: 'American', link: '/omelette-details' },
-    { name: 'Eggs', cuisine: 'Regional', link: '/eggs-details' },
-    { name: 'Crepes', cuisine: 'Regional', link: '/crepes-details' },
-    { name: 'Pancakes', cuisine: 'American', link: '/pancakes-details' },
+
+  meals: { name: string, link: string}[] = [
+    { name: 'With-tofu-and...', link: '/with-tofu-and-wakame-details' },
+    { name: 'With-mushroom', link: '/with-mushroom-details' },
+    { name: 'With-vegetables', link: '/with-vegetables-details' },
+    { name: 'With-clams', link: '/with-clams-details' },
+    { name: 'Spicy', link: '/spicy-details' },
 ];
 
   isBrightMode: boolean = false;
   searchQuery: string = '';
-  filteredMeals: { name: string, cuisine: string, link: string }[] = this.meals;
+  filteredMeals: { name: string, link: string }[] = this.meals;
   isSearching: boolean = false;
 
   selectItem(index: number) {
@@ -47,19 +47,11 @@ export class MisoDetailsComponent {
     }
   }
 
-  filterByCuisine(cuisine: string) {
-    if (cuisine === 'All') {
-      this.filteredMeals = this.meals;
-    } else {
-      this.filteredMeals = this.meals.filter(meal => meal.cuisine === cuisine);
-    }
-  }
-
   toggleTheme() {
     this.isBrightMode = !this.isBrightMode;
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/sniadania/${mealName}.png`;
+    return `../assets/images/miso/${mealName}.png`;
   }
 }

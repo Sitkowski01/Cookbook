@@ -10,13 +10,13 @@
             </div>
             
             <!-- Karuzela -->
-            <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem;" *ngIf="!isSearching">
+            <!-- <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem;" *ngIf="!isSearching">
                 <div class="element-karuzeli" *ngFor="let item of items; let i = index" 
                     [ngClass]="{'active': isActive(i), 'inactive': !isActive(i)}" 
                     (click)="selectItem(i); filterByCuisine(item)">
                     {{ item }}
                 </div>
-            </div>
+            </div> -->
             
             <div class="formularz-wyszukiwania" *ngIf="isSearching">
                 <div class="container-fluid">

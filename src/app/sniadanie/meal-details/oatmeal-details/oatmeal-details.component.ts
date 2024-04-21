@@ -7,18 +7,17 @@ import { Component } from '@angular/core';
 })
 export class OatmealDetailsComponent {
   selectedIndex: number = 0;
-  items: string[] = ['All','Continental', 'Regional', 'American', 'Japanese','Italian','Mediteranan','Asian'];
-  meals: { name: string, cuisine: string, link: string}[] = [
-    { name: 'Shakshouka', cuisine: 'Asian', link: '/shakshouka-details' },
-    { name: 'Omelette', cuisine: 'American', link: '/omelette-details' },
-    { name: 'Eggs', cuisine: 'Regional', link: '/eggs-details' },
-    { name: 'Crepes', cuisine: 'Regional', link: '/crepes-details' },
-    { name: 'Pancakes', cuisine: 'American', link: '/pancakes-details' },
+  meals: { name: string, link: string}[] = [
+    { name: 'Classic', link: '/classic-details' },
+    { name: 'Apple-cinnamon', link: '/apple-cinnamon-details' },
+    { name: 'Banana-nut', link: '/banana-nut-details' },
+    { name: 'Berry-blast', link: '/berry-blast-details' },
+    { name: 'Pumpkin-spice', link: '/pumpkin-spice-details' },
 ];
 
   isBrightMode: boolean = false;
   searchQuery: string = '';
-  filteredMeals: { name: string, cuisine: string, link: string }[] = this.meals;
+  filteredMeals: { name: string, link: string }[] = this.meals;
   isSearching: boolean = false;
 
   selectItem(index: number) {
@@ -47,19 +46,11 @@ export class OatmealDetailsComponent {
     }
   }
 
-  filterByCuisine(cuisine: string) {
-    if (cuisine === 'All') {
-      this.filteredMeals = this.meals;
-    } else {
-      this.filteredMeals = this.meals.filter(meal => meal.cuisine === cuisine);
-    }
-  }
-
   toggleTheme() {
     this.isBrightMode = !this.isBrightMode;
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/sniadania/${mealName}.png`;
+    return `../assets/images/oatmeal/${mealName}.png`;
   }
 }
