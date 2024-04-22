@@ -32,7 +32,7 @@
             <div class="row mt-4" style="overflow-y: auto; max-height: 620px;">
                 <ng-container *ngFor="let meal of filteredMeals; let i = index">
                     <div class="col-6 mt-3">
-                        <app-meal-sniadanie [backgroundImageUrl]="getBackgroundImageUrl(meal.name)" [mealName]="meal.name" [isBrightkMode]="isBrightMode"></app-meal-sniadanie>
+                        <app-meal-sniadanie [backgroundImageUrl]="getBackgroundImageUrl(meal.name)" [routerLink]="meal.link" [mealName]="meal.name" [isBrightkMode]="isBrightMode"></app-meal-sniadanie>
                     </div>
                     <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
                 </ng-container>

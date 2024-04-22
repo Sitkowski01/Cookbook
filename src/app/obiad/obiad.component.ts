@@ -38,7 +38,7 @@ export class ObiadComponent {
 
   isBrightMode: boolean = false;
   searchQuery: string = '';
-  filteredMeals: { name: string, cuisine: string }[] = this.meals;
+  filteredMeals: { name: string, cuisine: string, link: string }[] = this.meals;
   isSearching: boolean = false;
 
   selectItem(index: number) {

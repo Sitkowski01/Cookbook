@@ -28,6 +28,30 @@ import { ShrimpsDetailsComponent } from './sniadanie/meal-details/shrimps-detail
 import { ToastsDetailsComponent } from './sniadanie/meal-details/toasts-details/toasts-details.component';
 import { WontonDetailsComponent } from './sniadanie/meal-details/wonton-details/wonton-details.component';
 import { YoghurtDetailsComponent } from './sniadanie/meal-details/yoghurt-details/yoghurt-details.component';
+import { BeetrootSoupDetailsComponent } from './obiad/meal-details/beetroot-soup-details/beetroot-soup-details.component';
+import { CheeseburgerDetailsComponent } from './obiad/meal-details/cheeseburger-details/cheeseburger-details.component';
+import { DumplingsDetailsComponent } from './obiad/meal-details/dumplings-details/dumplings-details.component';
+import { MushroomSoupDetailsComponent } from './obiad/meal-details/mushroom-soup-details/mushroom-soup-details.component';
+import { PorkCutletDetailsComponent } from './obiad/meal-details/pork-cutlet-details/pork-cutlet-details.component';
+import { PorkRibbsDetailsComponent } from './obiad/meal-details/pork-ribbs-details/pork-ribbs-details.component';
+import { SilesianNoodlesDetailsComponent } from './obiad/meal-details/silesian-noodles-details/silesian-noodles-details.component';
+import { SourRyeSoupDetailsComponent } from './obiad/meal-details/sour-rye-soup-details/sour-rye-soup-details.component';
+import { CoqAuVinDetailsComponent } from './obiad/meal-details/coq-au-vin-details/coq-au-vin-details.component';
+import { DonburiDetailsComponent } from './obiad/meal-details/donburi-details/donburi-details.component';
+import { FocacciaDetailsComponent } from './obiad/meal-details/focaccia-details/focaccia-details.component';
+import { GreekSaladDetailsComponent } from './obiad/meal-details/greek-salad-details/greek-salad-details.component';
+import { KungPaoDetailsComponent } from './obiad/meal-details/kung-pao-details/kung-pao-details.component';
+import { LasagneDetailsComponent } from './obiad/meal-details/lasagne-details/lasagne-details.component';
+import { PaellaDetailsComponent } from './obiad/meal-details/paella-details/paella-details.component';
+import { PizzaDetailsComponent } from './obiad/meal-details/pizza-details/pizza-details.component';
+import { RamenDetailsComponent } from './obiad/meal-details/ramen-details/ramen-details.component';
+import { RatatouilleDetailsComponent } from './obiad/meal-details/ratatouille-details/ratatouille-details.component';
+import { RisottoDetailsComponent } from './obiad/meal-details/risotto-details/risotto-details.component';
+import { SpaghettiDetailsComponent } from './obiad/meal-details/spaghetti-details/spaghetti-details.component';
+import { SushiDetailsComponent } from './obiad/meal-details/sushi-details/sushi-details.component';
+import { TroutDetailsComponent } from './obiad/meal-details/trout-details/trout-details.component';
+import { CabbageRollsDetailsComponent } from './obiad/meal-details/cabbage-rolls-details/cabbage-rolls-details.component';
+import { HuntersStewDetailsComponent } from './obiad/meal-details/hunters-stew-details/hunters-stew-details.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent }, 
@@ -67,21 +91,23 @@ const routes: Routes = [
   { path: 'sour-rye-soup-details', component: SourRyeSoupDetailsComponent },
   { path: 'cheeseburger-details', component: CheeseburgerDetailsComponent },
   { path: 'pork-ribbs-details', component: PorkRibbsDetailsComponent },
-  { path: 'ramen-details', component: CrepesDetailsComponent },
-  { path: 'donburi-details', component: PancakesDetailsComponent },
-  { path: 'pizza-details', component: PaniniDetailsComponent },
-  { path: 'risotto-details', component: SandwichesDetailsComponent },
-  { path: 'spaghetti-details', component: ScrambledEggsDetailsComponent },
-  { path: 'greek-salad-details', component: RiseWithEggDetailsComponent },
-  { path: 'trout-details', component: ToastsDetailsComponent },
-  { path: 'focaccia-details', component: MisoDetailsComponent },
-  { path: 'kung-pao-details', component: OkonomiyakiDetailsComponent },
-  { path: 'pad-thai-details', component: CroissantDetailsComponent },
-  { path: 'sushi-details', component: BreadWithOilDetailsComponent },
-  { path: 'ratatouille-details', component: YoghurtDetailsComponent },
-  { path: 'lasagne-details', component: DimSumDetailsComponent },
-  { path: 'paella-details', component: WontonDetailsComponent },
-  { path: 'coq-au-vin-details', component: BobaTeaDetailsComponent },
+  { path: 'ramen-details', component: RamenDetailsComponent },
+  { path: 'donburi-details', component: DonburiDetailsComponent },
+  { path: 'pizza-details', component: PizzaDetailsComponent },
+  { path: 'risotto-details', component: RisottoDetailsComponent },
+  { path: 'spaghetti-details', component: SpaghettiDetailsComponent },
+  { path: 'greek-salad-details', component: GreekSaladDetailsComponent },
+  { path: 'trout-details', component: TroutDetailsComponent },
+  { path: 'focaccia-details', component: FocacciaDetailsComponent },
+  { path: 'kung-pao-details', component: KungPaoDetailsComponent },
+  { path: 'pad-thai-details', component: SushiDetailsComponent },
+  { path: 'sushi-details', component: SushiDetailsComponent },
+  { path: 'ratatouille-details', component: RatatouilleDetailsComponent },
+  { path: 'lasagne-details', component: LasagneDetailsComponent },
+  { path: 'paella-details', component: PaellaDetailsComponent },
+  { path: 'coq-au-vin-details', component: CoqAuVinDetailsComponent },
+  { path: 'hunters-stew-details', component: HuntersStewDetailsComponent },
+  { path: 'cabbage-rolls-details', component: CabbageRollsDetailsComponent },
 ];
 
 @NgModule({
