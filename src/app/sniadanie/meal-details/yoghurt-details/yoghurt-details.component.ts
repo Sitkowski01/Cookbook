@@ -51,6 +51,6 @@ export class YoghurtDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/yogurt/${mealName}.png`;
+    return `../assets/images/meals-sniadania/yogurt/${mealName}.png`;
   }
 }

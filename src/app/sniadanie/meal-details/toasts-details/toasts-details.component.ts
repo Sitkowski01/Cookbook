@@ -51,6 +51,6 @@ export class ToastsDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/toasts/${mealName}.png`;
+    return `../assets/images/meals-sniadania/toasts/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class OatmealDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/oatmeal/${mealName}.png`;
+    return `../assets/images/meals-sniadania/oatmeal/${mealName}.png`;
   }
 }

@@ -50,6 +50,6 @@ export class RiseWithEggDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/rise-with-egg/${mealName}.png`;
+    return `../assets/images/meals-sniadania/rise-with-egg/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class ShakshoukaDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/shakshouka/${mealName}.png`;
+    return `../assets/images/meals-sniadania/shakshouka/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class DimSumDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/dim-sum/${mealName}.png`;
+    return `../assets/images/meals-sniadania/dim-sum/${mealName}.png`;
   }
 }

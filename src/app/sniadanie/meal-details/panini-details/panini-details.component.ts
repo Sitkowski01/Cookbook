@@ -51,6 +51,6 @@ export class PaniniDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/panini/${mealName}.png`;
+    return `../assets/images/meals-sniadania/panini/${mealName}.png`;
   }
 }

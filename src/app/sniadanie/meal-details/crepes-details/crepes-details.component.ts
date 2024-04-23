@@ -52,6 +52,6 @@ export class CrepesDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/crepes/${mealName}.png`;
+    return `../assets/images/meals-sniadania/crepes/${mealName}.png`;
   }
 }

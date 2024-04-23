@@ -52,6 +52,6 @@ export class ScrambledEggsDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/scrambled-eggs/${mealName}.png`;
+    return `../assets/images/meals-sniadania/scrambled-eggs/${mealName}.png`;
   }
 }

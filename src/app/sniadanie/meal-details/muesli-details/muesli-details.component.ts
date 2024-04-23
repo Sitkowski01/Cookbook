@@ -51,6 +51,6 @@ export class MuesliDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/muesli/${mealName}.png`;
+    return `../assets/images/meals-sniadania/muesli/${mealName}.png`;
   }
 }

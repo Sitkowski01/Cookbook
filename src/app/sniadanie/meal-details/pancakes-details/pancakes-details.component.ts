@@ -51,6 +51,6 @@ export class PancakesDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/pancakes/${mealName}.png`;
+    return `../assets/images/meals-sniadania/pancakes/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class BreadWithOilDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/bread-with-oil/${mealName}.png`;
+    return `../assets/images/meals-sniadania/bread-with-oil/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class QuicheDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/quiche/${mealName}.png`;
+    return `../assets/images/meals-sniadania/quiche/${mealName}.png`;
   }
 }

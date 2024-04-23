@@ -50,6 +50,6 @@ export class WontonDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/wonton/${mealName}.png`;
+    return `../assets/images/meals-sniadania/wonton/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class ShrimpsDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/shrimps/${mealName}.png`;
+    return `../assets/images/meals-sniadania/shrimps/${mealName}.png`;
   }
 }

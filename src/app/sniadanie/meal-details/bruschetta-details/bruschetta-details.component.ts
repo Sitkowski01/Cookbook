@@ -51,6 +51,6 @@ export class BruschettaDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/bruschetta/${mealName}.png`;
+    return `../assets/images/meals-sniadania/bruschetta/${mealName}.png`;
   }
 }

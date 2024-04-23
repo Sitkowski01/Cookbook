@@ -51,6 +51,6 @@ export class OkonomiyakiDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/okonomiyaki/${mealName}.png`;
+    return `../assets/images/meals-sniadania/okonomiyaki/${mealName}.png`;
   }
 }

@@ -51,6 +51,6 @@ export class CroissantDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/croissant/${mealName}.png`;
+    return `../assets/images/meals-sniadania/croissant/${mealName}.png`;
   }
 }

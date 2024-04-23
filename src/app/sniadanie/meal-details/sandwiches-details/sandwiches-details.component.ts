@@ -53,6 +53,6 @@ export class SandwichesDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/sandwiches/${mealName}.png`;
+    return `../assets/images/meals-sniadania/sandwiches/${mealName}.png`;
   }
 }

@@ -52,6 +52,6 @@ export class MisoDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/miso/${mealName}.png`;
+    return `../assets/images/meals-sniadania/miso/${mealName}.png`;
   }
 }
