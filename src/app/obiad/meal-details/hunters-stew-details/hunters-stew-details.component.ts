@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class HuntersStewDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Polish-bigos', link: '/polish-bigos-details' },
+    { name: 'German-jäger...', link: '/german-jäger-eintopf-details' },
+    { name: 'Hungarian...', link: '/hungarian-gulyás-details' },
+    { name: 'Russian...', link: '/russian-solyanka-details' },
+    { name: 'French-cassoulet', link: '/french-cassoulet-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class HuntersStewDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/hunters-stew/${mealName}.png`;
   }
 }

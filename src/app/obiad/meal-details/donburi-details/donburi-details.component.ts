@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class DonburiDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Katsu-don', link: '/katsu-don-details' },
+    { name: 'Oyako-don', link: '/oyako-don-details' },
+    { name: 'Gyudon', link: '/gyudon-details' },
+    { name: 'Tekka-don', link: '/tekka-don-details' },
+    { name: 'Unagi-don', link: '/unagi-don-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class DonburiDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/donburi/${mealName}.png`;
   }
 }

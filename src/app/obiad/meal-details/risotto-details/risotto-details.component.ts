@@ -8,11 +8,10 @@ import { Component } from '@angular/core';
 export class RisottoDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Alla-milanese', link: '/rissoto-alla-milanese-details' },
+    { name: 'Ai-funghi', link: '/rissoto-ai-funghi-details' },
+    { name: 'Al-frutti-di...', link: '/rissoto-al-frutti-di-mare-details' },
+    { name: 'Ai-frutti-di...', link: '/rissoto-ai-frutti-di-bosco-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +50,6 @@ export class RisottoDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/risotto/${mealName}.png`;
   }
 }

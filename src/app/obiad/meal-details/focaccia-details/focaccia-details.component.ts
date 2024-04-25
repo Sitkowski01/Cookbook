@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class FocacciaDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Classic', link: '/classic-focaccia-details' },
+    { name: 'Rosemary', link: '/rosemary-focaccia-details' },
+    { name: 'Tomato-and...', link: '/tomato-and-basil-focaccia-details' },
+    { name: 'Onion', link: '/onion-focaccia-details' },
+    { name: 'Olive', link: '/olive-focaccia-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class FocacciaDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/focaccia/${mealName}.png`;
   }
 }

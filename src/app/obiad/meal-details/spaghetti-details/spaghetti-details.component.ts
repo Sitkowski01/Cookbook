@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class SpaghettiDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Carbonara', link: '/spaghetti-carbonara-details' },
+    { name: 'Bolognese', link: '/spaghetti-bolognese-details' },
+    { name: 'Aglio-e-olio', link: '/spaghetti-aglio-e-olio-details' },
+    { name: 'Alle-vongole', link: '/spaghetti-alle-vongole-details' },
+    { name: 'Alla-puttanesca', link: '/spaghetti-alla-puttanesca-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class SpaghettiDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/spaghetti/${mealName}.png`;
   }
 }

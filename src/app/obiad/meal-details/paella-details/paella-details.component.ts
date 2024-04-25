@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class PaellaDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Valencian', link: '/valencian-paella-details' },
+    { name: 'Seafood', link: '/seafood-paella-details' },
+    { name: 'Mixed', link: '/mixed-paella-details' },
+    { name: 'Vegetarian', link: '/vegetarian-paella-details' },
+    { name: 'Black', link: '/black-paella-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class PaellaDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/paella/${mealName}.png`;
   }
 }

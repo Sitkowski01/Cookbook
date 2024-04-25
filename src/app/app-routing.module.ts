@@ -52,6 +52,7 @@ import { SushiDetailsComponent } from './obiad/meal-details/sushi-details/sushi-
 import { TroutDetailsComponent } from './obiad/meal-details/trout-details/trout-details.component';
 import { CabbageRollsDetailsComponent } from './obiad/meal-details/cabbage-rolls-details/cabbage-rolls-details.component';
 import { HuntersStewDetailsComponent } from './obiad/meal-details/hunters-stew-details/hunters-stew-details.component';
+import { PadThaiDetailsComponent } from './obiad/meal-details/pad-thai-details/pad-thai-details.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent }, 
@@ -100,7 +101,7 @@ const routes: Routes = [
   { path: 'trout-details', component: TroutDetailsComponent },
   { path: 'focaccia-details', component: FocacciaDetailsComponent },
   { path: 'kung-pao-details', component: KungPaoDetailsComponent },
-  { path: 'pad-thai-details', component: SushiDetailsComponent },
+  { path: 'pad-thai-details', component: PadThaiDetailsComponent },
   { path: 'sushi-details', component: SushiDetailsComponent },
   { path: 'ratatouille-details', component: RatatouilleDetailsComponent },
   { path: 'lasagne-details', component: LasagneDetailsComponent },

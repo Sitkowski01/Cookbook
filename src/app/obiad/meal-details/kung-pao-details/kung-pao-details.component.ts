@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class KungPaoDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Chicken', link: '/chicken-kung-pao-details' },
+    { name: 'Shrimp', link: '/shrimp-kung-pao-details' },
+    { name: 'Tofu', link: '/tofu-kung-pao-details' },
+    { name: 'Beef', link: '/beef-kung-pao-details' },
+    { name: 'Pork', link: '/pork-kung-pao-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class KungPaoDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/kung-pao/${mealName}.png`;
   }
 }

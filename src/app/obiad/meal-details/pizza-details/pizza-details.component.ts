@@ -8,11 +8,16 @@ import { Component } from '@angular/core';
 export class PizzaDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Margherita', link: '/pizza-margherita-details' },
+    { name: 'BBQ-chicken', link: '/bbq-chicken-pizza-details' },
+    { name: 'Hawaiian', link: '/hawaiian-pizza-details' },
+    { name: 'Margherita...', link: '/pizza-margherita-con-bufala-details' },
+    { name: 'Neapolitan', link: '/neapolitan-pizza-details' },
+    { name: 'Pepperoni', link: '/pizza-pepperoni-details' },
+    { name: 'Quattro-stagioni', link: '/quattro-satgioni-pizza-details' },
+    { name: 'Supreme', link: '/supreme-pizza-details' },
+    { name: 'White-pizza', link: '/white-pizza-details' },
+    { name: 'Chicago-deep...', link: '/chicago-deep-dish-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +56,6 @@ export class PizzaDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/pizza/${mealName}.png`;
   }
 }

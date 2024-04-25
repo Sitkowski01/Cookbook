@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class CheeseburgerDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Classic', link: '/classic-cheesburger-details' },
+    { name: 'Bacon', link: '/bacon-cheesburger-details' },
+    { name: 'Mushroom-swiss', link: '/mushroom-swiss-cheesburger-details' },
+    { name: 'BBQ', link: '/bbq-cheesburger-details' },
+    { name: 'Jalapeno-pepper', link: '/jalapeno-pepper-cheesburger-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class CheeseburgerDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/cheeseburger/${mealName}.png`;
   }
 }

@@ -8,11 +8,12 @@ import { Component } from '@angular/core';
 export class PorkCutletDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Tonkatsu', link: '/tonkatsu-details' },
+    { name: 'Schnitzel', link: '/schnitzel-details' },
+    { name: 'Milanesa', link: '/milanesa-details' },
+    { name: 'Pork-katsu...', link: '/pork-katsu-curry-details' },
+    { name: 'Cordon-bleu', link: '/cordon-bleu-details' },
+    { name: 'Schabowy', link: '/schabowy-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +52,6 @@ export class PorkCutletDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/pork-cutlet/${mealName}.png`;
   }
 }

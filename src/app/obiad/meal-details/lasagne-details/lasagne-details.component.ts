@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class LasagneDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Beef', link: '/beef-lasagne-details' },
+    { name: 'Vegetarian', link: '/vegetarian-lasagne-details' },
+    { name: 'Seafood', link: '/seafood-lasagne-details' },
+    { name: 'Chicken-and...', link: '/chicken-and-spinach-lasagne-details' },
+    { name: 'Four-cheese', link: '/four-cheese-lasagne-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class LasagneDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/lasagne/${mealName}.png`;
   }
 }

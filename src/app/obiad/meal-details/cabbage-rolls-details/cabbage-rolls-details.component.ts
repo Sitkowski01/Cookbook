@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class CabbageRollsDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Polish-gołąbki', link: '/polish-gołąbki-details' },
+    { name: 'Ukrainian...', link: '/ukrainian-holubtsi-details' },
+    { name: 'Turkish-lahana...', link: '/turkish-lahana-sarma-details' },
+    { name: 'Romanian...', link: '/romanian-sarmale-details' },
+    { name: 'Middle-eastern...', link: '/middle-eastern-mahshi-malfouf-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class CabbageRollsDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/cabbage-rolls/${mealName}.png`;
   }
 }

@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class GreekSaladDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Classic', link: '/classic-greek-salad-details' },
+    { name: 'Horiatiki', link: '/horiatiki-greek-salad-details' },
+    { name: 'With-avocado', link: '/greek-salad-with-avocado-details' },
+    { name: 'Grilled', link: '/grilled-greek-salad-details' },
+    { name: 'Quinoa', link: '/quinoa-greek-salad-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class GreekSaladDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/greek-salad/${mealName}.png`;
   }
 }

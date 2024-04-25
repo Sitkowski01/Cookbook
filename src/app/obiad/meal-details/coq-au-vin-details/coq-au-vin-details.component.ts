@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class CoqAuVinDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Traditional', link: '/traditional-coq-au-vin-details' },
+    { name: 'White-wine', link: '/white-coq-au-vin-wine-details' },
+    { name: 'Mushroom', link: '/mushroom-coq-au-vin-details' },
+    { name: 'Vegetable', link: '/vegetable-coq-au-vin-details' },
+    { name: 'Seafood', link: '/seafood-coq-au-vin-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class CoqAuVinDetailsComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-obiady/coq-au-vin/${mealName}.png`;
   }
 }
