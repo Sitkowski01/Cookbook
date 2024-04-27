@@ -10,5 +10,4 @@ export class MealKolacjaComponent {
   @Input() backgroundImageUrl: string = '';
   @Input() mealTextColor: string = 'white';
   @Input() isBrightkMode: boolean = false;
-  @Input() link: string = '';
 }

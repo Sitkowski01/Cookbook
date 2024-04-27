@@ -53,6 +53,29 @@ import { TroutDetailsComponent } from './obiad/meal-details/trout-details/trout-
 import { CabbageRollsDetailsComponent } from './obiad/meal-details/cabbage-rolls-details/cabbage-rolls-details.component';
 import { HuntersStewDetailsComponent } from './obiad/meal-details/hunters-stew-details/hunters-stew-details.component';
 import { PadThaiDetailsComponent } from './obiad/meal-details/pad-thai-details/pad-thai-details.component';
+import { CalzoneComponent } from './kolacja/meal-details/calzone/calzone.component';
+import { CodFilletComponent } from './kolacja/meal-details/cod-fillet/cod-fillet.component';
+import { ConfitDeCanardComponent } from './kolacja/meal-details/confit-de-canard/confit-de-canard.component';
+import { CurryComponent } from './kolacja/meal-details/curry/curry.component';
+import { GoulashComponent } from './kolacja/meal-details/goulash/goulash.component';
+import { GrilledBreamComponent } from './kolacja/meal-details/grilled-bream/grilled-bream.component';
+import { InsalataCapreseComponent } from './kolacja/meal-details/insalata-caprese/insalata-caprese.component';
+import { KashottoComponent } from './kolacja/meal-details/kashotto/kashotto.component';
+import { OssoBucoComponent } from './kolacja/meal-details/osso-buco/osso-buco.component';
+import { PaellaComponent } from './kolacja/meal-details/paella/paella.component';
+import { PastaComponent } from './kolacja/meal-details/pasta/pasta.component';
+import { PhoComponent } from './kolacja/meal-details/pho/pho.component';
+import { PotatoCakesComponent } from './kolacja/meal-details/potato-cakes/potato-cakes.component';
+import { RavioliComponent } from './kolacja/meal-details/ravioli/ravioli.component';
+import { SashimiComponent } from './kolacja/meal-details/sashimi/sashimi.component';
+import { SweetCrepesComponent } from './kolacja/meal-details/sweet-crepes/sweet-crepes.component';
+import { TagliatelleComponent } from './kolacja/meal-details/tagliatelle/tagliatelle.component';
+import { TandooriComponent } from './kolacja/meal-details/tandoori/tandoori.component';
+import { TonkatsuComponent } from './kolacja/meal-details/tonkatsu/tonkatsu.component';
+import { UdonComponent } from './kolacja/meal-details/udon/udon.component';
+import { VegetableSaladComponent } from './kolacja/meal-details/vegetable-salad/vegetable-salad.component';
+import { YakisobaComponent } from './kolacja/meal-details/yakisoba/yakisoba.component';
+import { GrilledChickenComponent } from './kolacja/meal-details/grilled-chicken/grilled-chicken.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent }, 
@@ -109,6 +132,30 @@ const routes: Routes = [
   { path: 'coq-au-vin-details', component: CoqAuVinDetailsComponent },
   { path: 'hunters-stew-details', component: HuntersStewDetailsComponent },
   { path: 'cabbage-rolls-details', component: CabbageRollsDetailsComponent },
+  { path: 'goulash-details', component: GoulashComponent },
+  { path: 'pasta-details', component: PastaComponent },
+  { path: 'sashimi-details', component: SashimiComponent },
+  { path: 'yakisoba-details', component: YakisobaComponent },
+  { path: 'tonkatsu-details', component: TonkatsuComponent },
+  { path: 'udon-details', component: UdonComponent },
+  { path: 'tagliatelle-details', component: TagliatelleComponent },
+  { path: 'osso-buco-details', component: OssoBucoComponent },
+  { path: 'calzone-details', component: CalzoneComponent },
+  { path: 'caprese-details', component: InsalataCapreseComponent },
+  { path: 'grilled-bream-details', component: GrilledBreamComponent },
+  { path: 'paella-details', component: PaellaComponent },
+  { path: 'tandoori-details', component: TandooriComponent },
+  { path: 'pho-details', component: PhoComponent },
+  { path: 'curry-details', component: CurryComponent },
+  { path: 'confit-de-canard-details', component: ConfitDeCanardComponent },
+  { path: 'cod-fillet-details', component: CodFilletComponent },
+  { path: 'ravioli-details', component: RavioliComponent },
+  { path: 'potato-cakes-details', component: PotatoCakesComponent },
+  { path: 'vegetable-salad-details', component: VegetableSaladComponent },
+  { path: 'kashotto-details', component: KashottoComponent },
+  { path: 'sweet-crepes-details', component: SweetCrepesComponent },
+  { path: 'grilled-chicken-details', component: GrilledChickenComponent },
+  
 ];
 
 @NgModule({

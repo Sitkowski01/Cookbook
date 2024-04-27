@@ -60,6 +60,29 @@ import { RatatouilleDetailsComponent } from './obiad/meal-details/ratatouille-de
 import { LasagneDetailsComponent } from './obiad/meal-details/lasagne-details/lasagne-details.component';
 import { PaellaDetailsComponent } from './obiad/meal-details/paella-details/paella-details.component';
 import { CoqAuVinDetailsComponent } from './obiad/meal-details/coq-au-vin-details/coq-au-vin-details.component';
+import { GoulashComponent } from './kolacja/meal-details/goulash/goulash.component';
+import { GrilledChickenComponent } from './kolacja/meal-details/grilled-chicken/grilled-chicken.component';
+import { PastaComponent } from './kolacja/meal-details/pasta/pasta.component';
+import { SashimiComponent } from './kolacja/meal-details/sashimi/sashimi.component';
+import { YakisobaComponent } from './kolacja/meal-details/yakisoba/yakisoba.component';
+import { TonkatsuComponent } from './kolacja/meal-details/tonkatsu/tonkatsu.component';
+import { UdonComponent } from './kolacja/meal-details/udon/udon.component';
+import { TagliatelleComponent } from './kolacja/meal-details/tagliatelle/tagliatelle.component';
+import { OssoBucoComponent } from './kolacja/meal-details/osso-buco/osso-buco.component';
+import { CalzoneComponent } from './kolacja/meal-details/calzone/calzone.component';
+import { InsalataCapreseComponent } from './kolacja/meal-details/insalata-caprese/insalata-caprese.component';
+import { GrilledBreamComponent } from './kolacja/meal-details/grilled-bream/grilled-bream.component';
+import { PaellaComponent } from './kolacja/meal-details/paella/paella.component';
+import { TandooriComponent } from './kolacja/meal-details/tandoori/tandoori.component';
+import { PhoComponent } from './kolacja/meal-details/pho/pho.component';
+import { CurryComponent } from './kolacja/meal-details/curry/curry.component';
+import { ConfitDeCanardComponent } from './kolacja/meal-details/confit-de-canard/confit-de-canard.component';
+import { CodFilletComponent } from './kolacja/meal-details/cod-fillet/cod-fillet.component';
+import { RavioliComponent } from './kolacja/meal-details/ravioli/ravioli.component';
+import { PotatoCakesComponent } from './kolacja/meal-details/potato-cakes/potato-cakes.component';
+import { VegetableSaladComponent } from './kolacja/meal-details/vegetable-salad/vegetable-salad.component';
+import { KashottoComponent } from './kolacja/meal-details/kashotto/kashotto.component';
+import { SweetCrepesComponent } from './kolacja/meal-details/sweet-crepes/sweet-crepes.component';
 
 @NgModule({
   declarations: [
@@ -120,6 +143,29 @@ import { CoqAuVinDetailsComponent } from './obiad/meal-details/coq-au-vin-detail
     LasagneDetailsComponent,
     PaellaDetailsComponent,
     CoqAuVinDetailsComponent,
+    GoulashComponent,
+    GrilledChickenComponent,
+    PastaComponent,
+    SashimiComponent,
+    YakisobaComponent,
+    TonkatsuComponent,
+    UdonComponent,
+    TagliatelleComponent,
+    OssoBucoComponent,
+    CalzoneComponent,
+    InsalataCapreseComponent,
+    GrilledBreamComponent,
+    PaellaComponent,
+    TandooriComponent,
+    PhoComponent,
+    CurryComponent,
+    ConfitDeCanardComponent,
+    CodFilletComponent,
+    RavioliComponent,
+    PotatoCakesComponent,
+    VegetableSaladComponent,
+    KashottoComponent,
+    SweetCrepesComponent,
   ],
   imports: [
     BrowserModule,
