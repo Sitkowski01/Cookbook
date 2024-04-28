@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class CodFilletComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Baked-with...', link: '/baked-cod-fllet-with-lemon-and-herbs-details' },
+    { name: 'Pan-seared...', link: '/pan-seared-cod-fllet-with-tomato-sauce-details' },
+    { name: 'Grilled-with...', link: '/grilled-cod-fllet-with-garlic-butter-details' },
+    { name: 'Crispy-with...', link: '/crispy-cod-fllet-with-tartar-sauce-details' },
+    { name: 'Steamed-with...', link: '/steamed-cod-fllet-with-ginger-and-soy-sauce-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class CodFilletComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/cod-fillet/${mealName}.png`;
   }
 }

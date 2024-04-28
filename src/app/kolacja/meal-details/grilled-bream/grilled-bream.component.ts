@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class GrilledBreamComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'With-lemon...', link: '/grilled-bream-with-lemon-butter-sauce-details' },
+    { name: 'Mediterranean', link: '/mediterranean-spicy-grilled-details' },
+    { name: 'With-herbs', link: '/grilled-bream-with-herbs-details' },
+    { name: 'Spicy', link: '/spicy-grilled-bream-details' },
+    { name: 'With-garlic...', link: '/grilled-bream-with-garlic-aioli-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class GrilledBreamComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/grilled-bream/${mealName}.png`;
   }
 }

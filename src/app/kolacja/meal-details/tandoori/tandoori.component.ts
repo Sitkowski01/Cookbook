@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class TandooriComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Chicken', link: '/chicken-tandoori-details' },
+    { name: 'Lamb', link: '/lamb-tandoori-details' },
+    { name: 'Fish', link: '/fish-tandoori-details' },
+    { name: 'Paneer', link: '/paneer-tandoori-details' },
+    { name: 'Mixed-grill', link: '/mixed-grill-tandoori-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class TandooriComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/tandoori/${mealName}.png`;
   }
 }

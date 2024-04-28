@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class GrilledChickenComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'BBQ', link: '/bbq-grilled-chicken-details' },
+    { name: 'Cajun', link: '/cajun-grilled-chicken-details' },
+    { name: 'Lemon-and...', link: '/lemon-and-herbs-grilled-chicken-details' },
+    { name: 'Mediterranean', link: '/nediterranean-grilled-chicken-details' },
+    { name: 'Teriyaki', link: '/teriyaki-grilled-chicken-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class GrilledChickenComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/grilled-chicken/${mealName}.png`;
   }
 }

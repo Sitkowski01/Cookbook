@@ -72,7 +72,6 @@ import { OssoBucoComponent } from './kolacja/meal-details/osso-buco/osso-buco.co
 import { CalzoneComponent } from './kolacja/meal-details/calzone/calzone.component';
 import { InsalataCapreseComponent } from './kolacja/meal-details/insalata-caprese/insalata-caprese.component';
 import { GrilledBreamComponent } from './kolacja/meal-details/grilled-bream/grilled-bream.component';
-import { PaellaComponent } from './kolacja/meal-details/paella/paella.component';
 import { TandooriComponent } from './kolacja/meal-details/tandoori/tandoori.component';
 import { PhoComponent } from './kolacja/meal-details/pho/pho.component';
 import { CurryComponent } from './kolacja/meal-details/curry/curry.component';
@@ -155,7 +154,6 @@ import { SweetCrepesComponent } from './kolacja/meal-details/sweet-crepes/sweet-
     CalzoneComponent,
     InsalataCapreseComponent,
     GrilledBreamComponent,
-    PaellaComponent,
     TandooriComponent,
     PhoComponent,
     CurryComponent,

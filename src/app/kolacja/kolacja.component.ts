@@ -21,7 +21,6 @@ export class KolacjaComponent {
     { name: "Calzone", cuisine: "Italian", link: "/calzone-details" },
     { name: "Caprese", cuisine: "Italian", link: "/caprese-details" },
     { name: "Grilled-bream", cuisine: "Mediterranean", link: "/grilled-bream-details" },
-    { name: "Paella", cuisine: "Mediterranean", link: "/paella-details" },
     { name: "Tandoori", cuisine: "Asian", link: "/tandoori-details" },
     { name: "Pho", cuisine: "Asian", link: "/pho-details" },
     { name: "Curry", cuisine: "Asian", link: "/curry-details" },

@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class CurryComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Chicken', link: '/chicken-curry-details' },
+    { name: 'Lamb', link: '/lamb-curry-details' },
+    { name: 'Vegetable', link: '/vegetable-curry-details' },
+    { name: 'Fish', link: '/fish-curry-details' },
+    { name: 'Beef', link: '/beef-curry-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class CurryComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/curry/${mealName}.png`;
   }
 }

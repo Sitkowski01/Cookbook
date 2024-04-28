@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class ConfitDeCanardComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Traditional', link: '/traditional-confit-de-canard-details' },
+    { name: 'Confit-duck-o...', link: '/confit-duck-leg-with-orange-sauce-details' },
+    { name: 'Confit-duck-ch...', link: '/confit-duck-leg-with-cherry-sauce-details' },
+    { name: 'Confit-duck-w...', link: '/confit-duck-leg-with-red-wine-sauce-details' },
+    { name: 'Confit-duck-s...', link: '/confit-duck-leg-salad-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class ConfitDeCanardComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/confit-de-canard/${mealName}.png`;
   }
 }

@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class PhoComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Beef', link: '/beef-pho-details' },
+    { name: 'Chicken', link: '/chicken-pho-details' },
+    { name: 'Vegetarian', link: '/vegetarian-pho-details' },
+    { name: 'Seafood', link: '/seafood-pho-details' },
+    { name: 'Spicy-beef', link: '/spicy-beef-pho-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class PhoComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/pho/${mealName}.png`;
   }
 }

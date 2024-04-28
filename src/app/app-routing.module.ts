@@ -62,7 +62,6 @@ import { GrilledBreamComponent } from './kolacja/meal-details/grilled-bream/gril
 import { InsalataCapreseComponent } from './kolacja/meal-details/insalata-caprese/insalata-caprese.component';
 import { KashottoComponent } from './kolacja/meal-details/kashotto/kashotto.component';
 import { OssoBucoComponent } from './kolacja/meal-details/osso-buco/osso-buco.component';
-import { PaellaComponent } from './kolacja/meal-details/paella/paella.component';
 import { PastaComponent } from './kolacja/meal-details/pasta/pasta.component';
 import { PhoComponent } from './kolacja/meal-details/pho/pho.component';
 import { PotatoCakesComponent } from './kolacja/meal-details/potato-cakes/potato-cakes.component';
@@ -143,7 +142,6 @@ const routes: Routes = [
   { path: 'calzone-details', component: CalzoneComponent },
   { path: 'caprese-details', component: InsalataCapreseComponent },
   { path: 'grilled-bream-details', component: GrilledBreamComponent },
-  { path: 'paella-details', component: PaellaComponent },
   { path: 'tandoori-details', component: TandooriComponent },
   { path: 'pho-details', component: PhoComponent },
   { path: 'curry-details', component: CurryComponent },

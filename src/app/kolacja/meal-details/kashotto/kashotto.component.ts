@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class KashottoComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Mushroom', link: '/mushroom-kashotto-details' },
+    { name: 'Pumpkin-and...', link: '/pumpkin-and-sage-kashotto-details' },
+    { name: 'Spinach-and...', link: '/spinach-and-feta-kashotto-details' },
+    { name: 'Butternut...', link: '/butternut-squash-and-walnut-kashotto-details' },
+    { name: 'Asparagus...', link: '/asparagus-and-lemon-kashotto-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class KashottoComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/kashotto/${mealName}.png`;
   }
 }

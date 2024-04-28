@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class RavioliComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Cheese', link: '/cheese-ravioli-details' },
+    { name: 'Spinach-and...', link: '/spinach-and-ricotta-ravioli-details' },
+    { name: 'Mushroom', link: '/mushroom-ravioli-details' },
+    { name: 'Lobster', link: '/lobster-ravioli-details' },
+    { name: 'Butternut...', link: '/butternut-squash-ravioli-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class RavioliComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/ravioli/${mealName}.png`;
   }
 }

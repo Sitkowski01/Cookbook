@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class SweetCrepesComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Nutella-and...', link: '/nutella-and-banana-crepes-details' },
+    { name: 'Strawberry', link: '/strawberry-crepes-details' },
+    { name: 'Lemon-and...', link: '/lemon-and-sugar-crepes-details' },
+    { name: 'Blueberry-and...', link: '/blueberry-and-ricotta-crepes-details' },
+    { name: 'Apple-cinamon', link: '/apple-cinamon-sweet-crepes-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -51,6 +51,6 @@ export class SweetCrepesComponent {
   }
 
   getBackgroundImageUrl(mealName: string): string {
-    return `../assets/images/meals-sniadania/boba-tea/${mealName}.png`;
+    return `../assets/images/meals-kolacje/sweet-crepes/${mealName}.png`;
   }
 }
