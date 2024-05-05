@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sniadanie',
@@ -17,7 +18,7 @@ export class SniadanieComponent {
     { name: 'Panini', cuisine: 'Italian', link: '/panini-details' },
     { name: 'Sandwiches', cuisine: 'Regional', link: '/sandwiches-details' },
     { name: 'Scrambled-eggs', cuisine: 'Regional', link: '/scrambled-eggs-details' },
-    { name: 'Rise-with-egg', cuisine: 'Japanese', link: '/rise-with-egg-details' },
+    { name: 'Rice-with-egg', cuisine: 'Japanese', link: '/rice-with-egg-details' },
     { name: 'Toasts', cuisine: 'American', link: '/toasts-details' },
     { name: 'Miso', cuisine: 'Japanese', link: '/miso-details' },
     { name: 'Okonomiyaki', cuisine: 'Japanese', link: '/okonomiyaki-details' },
@@ -64,6 +65,12 @@ export class SniadanieComponent {
       this.filteredMeals = this.meals.filter(meal => meal.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
     }
   }
+
+  constructor(private router: Router) {}
+  
+  goBack(): void {
+  this.router.navigate(['/menu']);
+}
 
   filterByCuisine(cuisine: string) {
     if (cuisine === 'All') {

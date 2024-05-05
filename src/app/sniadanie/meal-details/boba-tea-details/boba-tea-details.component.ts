@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-boba-tea-details',
@@ -8,11 +9,11 @@ import { Component } from '@angular/core';
 export class BobaTeaDetailsComponent {
   selectedIndex: number = 0;
   meals: { name: string, link: string}[] = [
-    { name: 'Classic', link: '/classic-details' },
-    { name: 'Fruit', link: '/fruit-details' },
-    { name: 'Matcha', link: '/matcha-details' },
-    { name: 'Taro', link: '/taro-details' },
-    { name: 'Thai', link: '/thai-details' },
+    { name: 'Classic', link: '/classic-boba-tea-details' },
+    { name: 'Fruit', link: '/fruit-boba-tea-details' },
+    { name: 'Matcha', link: '/matcha-boba-tea-details' },
+    { name: 'Taro', link: '/taro-boba-tea-details' },
+    { name: 'Thai', link: '/thai-boba-tea-details' },
 ];
 
   isBrightMode: boolean = false;
@@ -22,6 +23,12 @@ export class BobaTeaDetailsComponent {
 
   selectItem(index: number) {
     this.selectedIndex = index;
+  }
+
+  constructor(private router: Router) {}
+  
+    goBack(): void {
+    this.router.navigate(['/sniadanie']);
   }
 
   isActive(index: number): boolean {

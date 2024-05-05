@@ -1,9 +1,10 @@
-.menu-page{
+.menu-page {
     background-color: #222831;
-    height: 100vh;
+    min-height: 100vh; 
     padding-left: 5%;
     padding-right: 5%;
 }
+
 .gorne-rozstawienie{
     display: flex;
     justify-content: space-between;
@@ -11,7 +12,7 @@
 .dolne-rozstawienie{
     margin-top: 15%;
 }
-.slonce{
+.back{
     display: flex;
     padding: 6%;
     background-color: #31363F;
@@ -93,7 +94,7 @@
  .bright-mode .active{
     color: black;
  }
-.bright-mode .slonce{
+.bright-mode .back{
     background-color: #8d8a8a;
 }
 

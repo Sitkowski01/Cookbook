@@ -1,6 +1,10 @@
 .menu-page {
     background-color: #222831;
     min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -100,3 +104,54 @@
 .bright-mode .lupa{
     background-color: #8d8a8a;
 }
+.content{
+    color: white;
+}
+.title{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+.ingredient-title{
+    font-size: 20px;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.ingredient{
+    font-size: 16px;
+    font-family: "Lobster Two", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.generate-button{
+    display: flex;
+    justify-content: right;
+}
+.yellow-button{
+    background-color:#D7CB63;
+    padding: 4%;
+    border-radius: 18px;
+    font-size: 17px;
+    font-family: "Monda", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.yellow-button:hover {
+    border: solid white 2px; 
+    color: white; 
+    background-color: transparent; 
+}
+
+.bright-mode .ingredient{
+    color: black;
+ }
+
+ .bright-mode .ingredient-title{
+    color: black;
+ }
+
+ .bright-mode .title{
+    color: black;
+ }

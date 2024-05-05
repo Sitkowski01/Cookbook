@@ -75,6 +75,7 @@ import { UdonComponent } from './kolacja/meal-details/udon/udon.component';
 import { VegetableSaladComponent } from './kolacja/meal-details/vegetable-salad/vegetable-salad.component';
 import { YakisobaComponent } from './kolacja/meal-details/yakisoba/yakisoba.component';
 import { GrilledChickenComponent } from './kolacja/meal-details/grilled-chicken/grilled-chicken.component';
+import { ClassicBobaTeaDetailsComponent } from './sniadanie/meal-details/boba-tea-details/classic-boba-tea-details/classic-boba-tea-details.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent }, 
@@ -90,7 +91,7 @@ const routes: Routes = [
   { path: 'panini-details', component: PaniniDetailsComponent },
   { path: 'sandwiches-details', component: SandwichesDetailsComponent },
   { path: 'scrambled-eggs-details', component: ScrambledEggsDetailsComponent },
-  { path: 'rise-with-egg-details', component: RiseWithEggDetailsComponent },
+  { path: 'rice-with-egg-details', component: RiseWithEggDetailsComponent },
   { path: 'toasts-details', component: ToastsDetailsComponent },
   { path: 'miso-details', component: MisoDetailsComponent },
   { path: 'okonomiyaki-details', component: OkonomiyakiDetailsComponent },
@@ -153,6 +154,7 @@ const routes: Routes = [
   { path: 'kashotto-details', component: KashottoComponent },
   { path: 'sweet-crepes-details', component: SweetCrepesComponent },
   { path: 'grilled-chicken-details', component: GrilledChickenComponent },
+  { path: 'classic-boba-tea-details', component: ClassicBobaTeaDetailsComponent },
   
 ];
 

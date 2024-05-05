@@ -82,6 +82,7 @@ import { PotatoCakesComponent } from './kolacja/meal-details/potato-cakes/potato
 import { VegetableSaladComponent } from './kolacja/meal-details/vegetable-salad/vegetable-salad.component';
 import { KashottoComponent } from './kolacja/meal-details/kashotto/kashotto.component';
 import { SweetCrepesComponent } from './kolacja/meal-details/sweet-crepes/sweet-crepes.component';
+import { ClassicBobaTeaDetailsComponent } from './sniadanie/meal-details/boba-tea-details/classic-boba-tea-details/classic-boba-tea-details.component';
 
 @NgModule({
   declarations: [
@@ -164,6 +165,7 @@ import { SweetCrepesComponent } from './kolacja/meal-details/sweet-crepes/sweet-
     VegetableSaladComponent,
     KashottoComponent,
     SweetCrepesComponent,
+    ClassicBobaTeaDetailsComponent,
   ],
   imports: [
     BrowserModule,
