@@ -1,0 +1,63 @@
+<div class="container-fluid menu-page" [ngClass]="{'bright-mode': isBrightMode}">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="gorne-rozstawienie">
+                <div class="back" (click)="goBack()"><img src="../assets/images/Back.png" alt="Back"></div>
+                <div class="wybrany-posilek">Classic</div>
+                <div class="lupa" (click)="toggleTheme()"><img src="../assets/images/Sun.png" alt="Sun"></div>
+            </div>
+
+            <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem;">
+                <div class="element-karuzeli" *ngFor="let item of items; let i = index" 
+                    [ngClass]="{'active': isActive(i), 'inactive': !isActive(i)}" 
+                    (click)="selectItem(i)">
+                    {{ item }}
+                </div>
+            </div>
+            
+            <div class="content mt-5" *ngIf="isActive(0)">
+                <div class="title">CLASSIC BOBA TEA</div>
+                <img src="{{ getBackgroundImageUrl() }}" alt="Classic Boba Tea" style="max-width: 100%; margin-top: 2rem;">
+                
+
+                <h2 class="ingredient-title mt-3">Tea:</h2>
+                <ul>
+                    <li class="ingredient" *ngFor="let ingredient of doughIngredients">{{ ingredient }}</li>
+                </ul>
+
+                <h2 class="ingredient-title mt-4">Tapioca:</h2>
+                <ul>
+                    <li class="ingredient" *ngFor="let ingredient of fillingIngredients">{{ ingredient }}</li>
+                </ul>
+
+                <h2 class="ingredient-title mt-4">Serving:</h2>
+                <ul>
+                    <li class="ingredient" *ngFor="let ingredient of servingIngredients">{{ ingredient }}</li>
+                </ul>
+
+                <div class="generate-button mt-4 mb-3">
+                    <button class="btn yellow-button">Generate Shopping List</button>
+                </div>
+            </div>
+
+            <div class="content mt-5" *ngIf="isActive(1)">
+                <div class="title">CLASSIC BOBA TEA</div>
+                <img src="{{ getBackgroundImageUrl() }}" alt="Classic Boba Tea" style="max-width: 100%; margin-top: 2rem;">
+                
+                <h2 class="ingredient-title mt-4 mb-3">General description:</h2>
+                <div>
+                    <div class="ingredient" *ngFor="let description of generalDescription">{{ description }}</div>
+                </div>
+
+                <div class="ingredient-title mt-3">Tapioca Preparation:</div>
+                <ul class="mt-2">
+                    <li class="ingredient" *ngFor="let step of tapiocaPreparationSteps">{{ step }}</li>
+                </ul>
+                <div class="ingredient-title mt-4">Tea Preparation:</div>
+                <ul class="mt-2">
+                    <li class="ingredient" *ngFor="let step of teaPreparationSteps">{{ step }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+.menu-page{
+    background-color: #222831;
+    height: 100vh;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.gorne-rozstawienie{
+    display: flex;
+    justify-content: space-between;
+}
+.dolne-rozstawienie{
+    margin-top: 15%;
+}
+.slonce{
+    display: flex;
+    padding: 6%;
+    background-color: #31363F;
+    border-radius: 8px;
+    margin-top: 10%;
+}
+.lupa{
+    display: flex;
+    padding: 6%;
+    background-color: #31363F;
+    border-radius: 8px;
+    margin-top: 10%;
+}
+.srodkowe-rozstawienie{
+    color: white;
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
