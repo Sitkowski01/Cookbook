@@ -131,6 +131,12 @@ npm run build
 npm run serve:ssr:cookbook
 ```
 
+## Przed rozmową
+
+Różnice Angular kontra React, z pytaniami kontrolnymi, leżą w drugim projekcie:
+[ANGULAR-DLA-REACTOWCA.md](https://github.com/Sitkowski01/recall-lab/blob/main/ANGULAR-DLA-REACTOWCA.md).
+Ten projekt pokazuje starszy Angular (17, NgModule, RxJS), tamten nowszy (22, standalone, sygnały).
+
 ## Co zostało do zrobienia
 
 - Strony 332 wariantów, które dziś są oznaczone jako „wkrótce"
