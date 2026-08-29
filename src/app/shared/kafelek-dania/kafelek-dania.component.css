@@ -1,0 +1,40 @@
+.meal-background {
+  position: relative;
+  height: 17vh;
+  background-size: cover;
+  width: 160px;
+  border-radius: 12px;
+  font-size: 24px;
+  color: white;
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.meal-name {
+  font-size: 20px;
+  margin-left: 1.2rem;
+  padding-top: 6rem;
+  font-family: 'Lobster', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Kafelek bez wlasnej podstrony: przygaszony i wyraznie opisany,
+   zamiast odnosnika prowadzacego na pusta strone. */
+.meal-background.niedostepne {
+  filter: grayscale(0.8) brightness(0.6);
+  cursor: default;
+}
+
+.znacznik-wkrotce {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.65);
+  font-family: system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}

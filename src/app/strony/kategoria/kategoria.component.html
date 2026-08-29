@@ -1,0 +1,87 @@
+<div class="container-fluid menu-page" [ngClass]="{ 'bright-mode': czyJasny() }">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      @if (wezel(); as w) {
+        <div class="gorne-rozstawienie">
+          <div class="back" (click)="wstecz()">
+            <img src="assets/images/Back.png" alt="Wstecz" />
+          </div>
+          <div class="wybrany-posilek">{{ w.tytul }}</div>
+          <div class="lupa" (click)="przelaczSzukanie()">
+            <img src="assets/images/Search.png" alt="Szukaj" />
+          </div>
+        </div>
+
+        <!-- Filtr kuchni — tylko tam, gdzie dane go maja -->
+        @if (!szukanieOtwarte() && kuchnie().length) {
+          <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem">
+            <div
+              class="element-karuzeli"
+              [ngClass]="{ active: wybranaKuchnia() === null, inactive: wybranaKuchnia() !== null }"
+              (click)="wybierzKuchnie(null)"
+            >
+              All
+            </div>
+            @for (kuchnia of kuchnie(); track kuchnia) {
+              <div
+                class="element-karuzeli"
+                [ngClass]="{ active: wybranaKuchnia() === kuchnia, inactive: wybranaKuchnia() !== kuchnia }"
+                (click)="wybierzKuchnie(kuchnia)"
+              >
+                {{ kuchnia }}
+              </div>
+            }
+          </div>
+        }
+
+        @if (szukanieOtwarte()) {
+          <div class="formularz-wyszukiwania">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control rounded-input"
+                    placeholder="Search meal..."
+                    [ngModel]="fraza()"
+                    (ngModelChange)="fraza.set($event)"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        }
+
+        <div class="row mt-4" style="overflow-y: auto; max-height: 620px">
+          @for (danie of widoczne(); track danie.slug; let i = $index) {
+            <div class="col-6 mt-3">
+              @if (danie.dostepne) {
+                <a [routerLink]="['/', danie.slug]" class="odnosnik-kafelka">
+                  <app-kafelek-dania
+                    [nazwa]="danie.nazwa"
+                    [obraz]="danie.obraz"
+                    [jasnyMotyw]="czyJasny()"
+                  />
+                </a>
+              } @else {
+                <app-kafelek-dania
+                  [nazwa]="danie.nazwa"
+                  [obraz]="danie.obraz"
+                  [jasnyMotyw]="czyJasny()"
+                  [dostepne]="false"
+                />
+              }
+            </div>
+            @if ((i + 1) % 2 === 0) {
+              <div class="w-100"></div>
+            }
+          } @empty {
+            <p class="brak-wynikow">Nic nie pasuje do wyszukiwania.</p>
+          }
+        </div>
+      } @else {
+        <p class="brak-wynikow">Nie ma takiej strony.</p>
+      }
+    </div>
+  </div>
+</div>

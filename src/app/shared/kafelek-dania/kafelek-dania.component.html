@@ -1,0 +1,10 @@
+<div
+  class="meal-background"
+  [class.niedostepne]="!dostepne"
+  [style.background-image]="'url(' + obraz + ')'"
+>
+  <div class="meal-name" [style.color]="jasnyMotyw ? '#EEEEEE' : 'white'">
+    {{ nazwa }}
+  </div>
+  <div class="znacznik-wkrotce" *ngIf="!dostepne">wkrótce</div>
+</div>
