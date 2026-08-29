@@ -196,3 +196,8 @@
     transform: translate(-50%, -50%); 
   }
   
+.pusta-lista {
+  margin-top: 2rem;
+  font-family: system-ui, sans-serif;
+  opacity: 0.75;
+}

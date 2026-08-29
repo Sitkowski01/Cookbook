@@ -16,6 +16,8 @@
         </div>
   
         <div class="content mt-5">
+            <p *ngIf="brakSkladnikow" class="pusta-lista">Lista jest pusta — wejdź tu przyciskiem „Generate Shopping List" z przepisu.</p>
+
             <div *ngFor="let ingredient of ingredients; let i = index" class="ingredient-item mt-3">
               <input type="checkbox" id="{{'ingredient-' + i}}" class="checkbox-input" (change)="updateCheckedStatus(i)">
               <label for="{{'ingredient-' + i}}" class="checkbox-label" >
