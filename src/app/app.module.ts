@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MenuPageComponent } from './menu-page/menu-page.component';
 import { MealComponent } from './menu-page/meal/meal.component';
-import { ClassicBobaTeaDetailsComponent } from './sniadanie/meal-details/boba-tea-details/classic-boba-tea-details/classic-boba-tea-details.component';
 import { ClassicBobaTeaShoppingListComponent } from './classic-boba-tea-shopping-list/classic-boba-tea-shopping-list.component';
 
 /**
@@ -22,7 +21,6 @@ import { ClassicBobaTeaShoppingListComponent } from './classic-boba-tea-shopping
     MainPageComponent,
     MenuPageComponent,
     MealComponent,
-    ClassicBobaTeaDetailsComponent,
     ClassicBobaTeaShoppingListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],

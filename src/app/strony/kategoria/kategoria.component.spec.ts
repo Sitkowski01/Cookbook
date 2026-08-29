@@ -86,14 +86,24 @@ describe('KategoriaComponent', () => {
     expect(komponent.czyJasny()).toBeTrue();
   });
 
-  it('kafelek bez wlasnej podstrony nie dostaje odnosnika', async () => {
-    // beetroot-soup-details ma same warianty, ktorych strony nie powstaly
+  it('kazdy kafelek prowadzi gdzies — nie ma juz pozycji bez tresci', async () => {
+    // Przed uzupelnieniem przepisow 332 z 418 pozycji bylo oznaczonych jako
+    // 'wkrotce' i nieklikalnych. Ten test pilnuje, ze to sie nie cofnie.
     await zbuduj('beetroot-soup-details');
     fixture.detectChanges();
 
     const odnosniki = fixture.nativeElement.querySelectorAll('a.odnosnik-kafelka');
     expect(komponent.widoczne().length).toBeGreaterThan(0);
-    expect(odnosniki.length).toBe(0);
+    expect(odnosniki.length).toBe(komponent.widoczne().length);
+    expect(fixture.nativeElement.querySelector('.wkrotce')).toBeNull();
+  });
+
+  it('kafelek wariantu prowadzi na trase przepisu, nie na liste', async () => {
+    await zbuduj('beetroot-soup-details');
+    fixture.detectChanges();
+
+    const href = fixture.nativeElement.querySelector('a.odnosnik-kafelka').getAttribute('href');
+    expect(href).toContain('/przepis/beetroot-soup-details/');
   });
 
   it('kafelek z istniejaca podstrona dostaje odnosnik', async () => {

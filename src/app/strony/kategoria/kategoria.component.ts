@@ -6,6 +6,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 
 import { MenuService } from '../../core/menu.service';
+import { PozycjaMenu, WezelMenu } from '../../core/menu.model';
+import { PrzepisyService } from '../../core/przepisy.service';
 import { MotywService } from '../../core/motyw.service';
 import { KafelekDaniaComponent } from '../../shared/kafelek-dania/kafelek-dania.component';
 
@@ -28,6 +30,7 @@ export class KategoriaComponent {
   private readonly trasa = inject(ActivatedRoute);
   private readonly lokalizacja = inject(Location);
   private readonly motyw = inject(MotywService);
+  private readonly przepisy = inject(PrzepisyService);
 
   readonly czyJasny = this.motyw.czyJasny;
 
@@ -65,6 +68,17 @@ export class KategoriaComponent {
 
   wybierzKuchnie(kuchnia: string | null): void {
     this.wybranaKuchnia.set(kuchnia);
+  }
+
+  /**
+   * Kafelek prowadzi albo do kolejnej listy, albo do przepisu.
+   * Trasa przepisu niesie oba slugi, bo warianty typu `classic-details`
+   * powtarzaja sie miedzy daniami.
+   */
+  odnosnik(wezel: WezelMenu, danie: PozycjaMenu): unknown[] {
+    return this.przepisy.czyIstnieje(wezel.slug, danie.slug)
+      ? ['/przepis', wezel.slug, danie.slug]
+      : ['/', danie.slug];
   }
 
   wstecz(): void {

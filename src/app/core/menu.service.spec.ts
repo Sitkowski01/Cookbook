@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MENU } from './menu.data';
-import { MenuService, STRONY_PRZEPISOW } from './menu.service';
+import { MenuService } from './menu.service';
+import { PRZEPISY, kluczPrzepisu } from './przepisy.data';
 
 describe('MenuService', () => {
   let serwis: MenuService;
@@ -35,14 +36,14 @@ describe('MenuService', () => {
       }
     });
 
-    it('flaga dostepne obejmuje takze gotowe strony przepisow', () => {
-      // Przepis ma wlasny komponent i wlasna trase, ale nie jest wezlem menu.
-      // Wczesniej byl przez to oznaczany jako 'wkrotce' i nieklikalny.
-      const istniejace = new Set(MENU.map((w) => w.slug));
+    it('flaga dostepne obejmuje liste albo napisany przepis', () => {
+      const wezly = new Set(MENU.map((w) => w.slug));
+      const przepisy = new Set(PRZEPISY.map((p) => kluczPrzepisu(p.parent, p.slug)));
 
       for (const wezel of MENU) {
         for (const danie of serwis.filtruj(wezel.slug)) {
-          const powinno = istniejace.has(danie.slug) || STRONY_PRZEPISOW.has(danie.slug);
+          const powinno =
+            wezly.has(danie.slug) || przepisy.has(kluczPrzepisu(wezel.slug, danie.slug));
           expect(danie.dostepne)
             .withContext(wezel.slug + ' -> ' + danie.slug)
             .toBe(powinno);

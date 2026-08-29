@@ -58,3 +58,38 @@ input[type='checkbox'] {
   color: var(--tekst-cichy);
   text-decoration: line-through;
 }
+
+.skad {
+  margin: 0 0 1rem;
+  color: var(--tekst-cichy);
+  font-size: 0.9rem;
+}
+
+.skad strong {
+  color: var(--tekst);
+}
+
+.rzad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.rzad .postep {
+  margin: 0;
+}
+
+.przycisk-cichy {
+  border: none;
+  background: none;
+  color: var(--tekst-cichy);
+  font-size: 0.85rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.przycisk-cichy:hover {
+  color: var(--akcent);
+}

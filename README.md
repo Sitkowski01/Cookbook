@@ -21,7 +21,8 @@ wyglądało po zrobieniu.
 | Trasy w routingu | **78** | **6** |
 | Serwisy | **0** | 2 |
 | Ręcznie pisany TypeScript | ~6 700 linii | **494 linie** |
-| Testy | 82 zaślepki `should create` | **46 testów sprawdzających zachowanie** |
+| Testy | 82 zaślepki `should create` | **59 testów sprawdzających zachowanie** |
+| Strony przepisów | 1 | **332** |
 | CI | brak | GitHub Actions |
 
 Adresy się nie zmieniły. `/sniadanie`, `/curry-details` i pozostałe 71 działają
@@ -51,16 +52,25 @@ Skutki, poza samą objętością:
 - poprawka w wyszukiwarce wymagała 73 identycznych edycji
 - `app.module.ts` miał 182 linie samych deklaracji
 
-### Co ujawnił refaktor
+### Co ujawnił refaktor — i co z tym zrobiłem
 
 Po zebraniu odnośników w jedno miejsce policzenie ich stało się trywialne:
-**332 z 402 odnośników prowadziły do nieistniejących stron.** Kliknięcie w dowolny
+**332 z 418 pozycji prowadziły do nieistniejących stron.** Kliknięcie w dowolny
 wariant barszczu czy donburi dawało pustą stronę — nikt tego wcześniej nie widział,
 bo dane leżały rozsypane po 73 plikach.
 
-Nie da się tego naprawić dopisaniem 332 przepisów, więc dane niosą teraz flagę
-`dostepne`, a kafelek bez własnej podstrony jest wyszarzony i opisany „wkrótce"
-zamiast udawać działający odnośnik.
+Przez chwilę takie kafelki były po prostu wyszarzone i opisane „wkrótce".
+Potem **dopisałem brakujące przepisy — wszystkie 332.** Dziś każda pozycja w menu
+prowadzi albo do kolejnej listy, albo do gotowego przepisu: składniki, kroki,
+czas przygotowania i liczba porcji. Pilnuje tego test, który przechodzi po całym
+drzewie menu i nie pozwala, żeby została choć jedna pozycja bez treści.
+
+Przepisy są **danymi, nie komponentami**. Gdyby pójść drogą pierwotnego autora,
+oznaczałoby to 332 komponenty różniące się wyłącznie tablicami — czyli dokładnie
+ten problem, który właśnie został usunięty. Klucz przepisu to para
+**(danie, wariant)**, bo warianty w rodzaju `classic-details` powtarzają się
+między müsli, owsianką i okonomiyaki; sam slug wskazywałby na jeden przepis dla
+wszystkich trzech.
 
 ### Jak to jest zbudowane teraz
 
@@ -68,13 +78,16 @@ zamiast udawać działający odnośnik.
 src/app/
   core/
     menu.model.ts       typy: WezelMenu, PozycjaMenu
-    menu.data.ts        GENEROWANE — 73 węzły, 418 dań, wyciągnięte z komponentów
+    menu.data.ts        GENEROWANE — 73 węzły, 418 pozycji
+    przepisy/           332 przepisy w sześciu plikach
+    przepisy.service.ts wyszukiwanie po parze (danie, wariant)
     menu.service.ts     wyszukiwanie, filtr kuchni, spójność danych
     motyw.service.ts    jasny/ciemny w sygnale, jeden na aplikację
   shared/
     kafelek-dania/      jeden kafelek zamiast trzech identycznych
   strony/
     kategoria/          JEDNA strona listy dla wszystkich 73 adresów
+    przepis/            JEDNA strona przepisu dla wszystkich 332 dań
   main-page/            ekran startowy
   menu-page/            widok karty menu
 ```
@@ -93,7 +106,7 @@ przez `toSignal`, więc przejście `/sniadanie` → `/obiad` nie tworzy komponen
 
 ## Testy
 
-46 testów, wszystkie sprawdzają zachowanie, nie samo powstanie obiektu:
+59 testów, wszystkie sprawdzają zachowanie, nie samo powstanie obiektu:
 
 - **spójność danych** — brak duplikatów slugów, każdy węzeł ma tytuł i dania,
   flaga `dostepne` zgadza się z faktycznym istnieniem strony
@@ -101,7 +114,9 @@ przez `toSignal`, więc przejście `/sniadanie` → `/obiad` nie tworzy komponen
 - **routing** — pętla po wszystkich slugach z danych pilnująca, że żaden dotychczasowy
   adres nie przestał działać
 - **motyw** — że jest jednym egzemplarzem na aplikację, czyli że pierwotny błąd nie wróci
-- **kafelki** — że pozycja bez podstrony nie dostaje odnośnika
+- **kafelki** — że każda pozycja prowadzi gdzieś, a wariant kieruje na trasę przepisu
+- **przepisy** — komplet pól, minimum trzy składniki i trzy kroki w każdym,
+  brak duplikatów klucza (danie, wariant), zero pozycji bez treści
 
 ```bash
 npm run test:ci
@@ -139,6 +154,5 @@ Ten projekt pokazuje starszy Angular (17, NgModule, RxJS), tamten nowszy (22, st
 
 ## Co zostało do zrobienia
 
-- Strony 332 wariantów, które dziś są oznaczone jako „wkrótce"
 - Przepisy nadal są w kodzie, nie w bazie — naturalny następny krok to API
 - Testy end-to-end klikające przez ścieżkę: kategoria → danie → lista zakupów

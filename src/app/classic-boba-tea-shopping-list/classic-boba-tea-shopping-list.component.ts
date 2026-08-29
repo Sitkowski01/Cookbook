@@ -11,11 +11,22 @@ interface SkladnikDoKupienia {
 
 /** Stan przekazywany z ekranu przepisu przy nawigacji. */
 interface StanPrzepisu {
+  nazwa?: string;
+  skladniki?: string[];
+  powrot?: string;
+  /** Pola ze starego ekranu boba tea — obsługiwane dla zgodności wstecz. */
   doughIngredients?: string[];
   fillingIngredients?: string[];
   servingIngredients?: string[];
 }
 
+/**
+ * Lista zakupów.
+ *
+ * Powstała jako ekran dla jednego przepisu (Classic Boba Tea) z trzema
+ * sztywnymi grupami składników. Teraz przyjmuje dowolną listę, więc obsługuje
+ * wszystkie przepisy w aplikacji — stary kształt stanu nadal działa.
+ */
 @Component({
   selector: 'app-classic-boba-tea-shopping-list',
   templateUrl: './classic-boba-tea-shopping-list.component.html',
@@ -27,8 +38,8 @@ export class ClassicBobaTeaShoppingListComponent implements OnInit {
   private readonly motyw = inject(MotywService);
 
   ingredients: SkladnikDoKupienia[] = [];
-  items: string[] = ['Classic-boba-tea', 'Gołąbki', 'Żurek', 'Barszcz czerwony'];
-  selectedIndex = 0;
+  nazwaPrzepisu = '';
+  private powrot = '/menu';
 
   get isBrightMode(): boolean {
     return this.motyw.czyJasny();
@@ -36,15 +47,18 @@ export class ClassicBobaTeaShoppingListComponent implements OnInit {
 
   ngOnInit(): void {
     // Stan bierzemy z Location, a nie z globalnego `history` — to samo zrodlo,
-    // ale dostepne takze przy renderowaniu po stronie serwera, gdzie `history`
-    // nie istnieje i wywracalo prerender.
+    // ale dostepne takze przy renderowaniu po stronie serwera.
     const stan = (this.location.getState() ?? {}) as StanPrzepisu;
 
-    this.ingredients = [
+    const skladniki = stan.skladniki ?? [
       ...(stan.doughIngredients ?? []),
       ...(stan.fillingIngredients ?? []),
       ...(stan.servingIngredients ?? []),
-    ].map((name) => ({ name, checked: false }));
+    ];
+
+    this.ingredients = skladniki.map((name) => ({ name, checked: false }));
+    this.nazwaPrzepisu = stan.nazwa ?? '';
+    if (stan.powrot) this.powrot = stan.powrot;
   }
 
   /** Ile pozycji jest juz odhaczonych — do licznika postepu. */
@@ -62,22 +76,14 @@ export class ClassicBobaTeaShoppingListComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/boba-tea-details']);
-  }
-
-  getBackgroundImageUrl(): string {
-    return 'assets/images/meals-sniadania/boba-tea/boba-tea-recipe/boba-tea-classic.png';
+    void this.router.navigateByUrl(this.powrot);
   }
 
   updateCheckedStatus(index: number): void {
     this.ingredients[index].checked = !this.ingredients[index].checked;
   }
 
-  isActive(index: number): boolean {
-    return index === this.selectedIndex;
-  }
-
-  selectItem(index: number): void {
-    this.selectedIndex = index;
+  odznaczWszystko(): void {
+    this.ingredients = this.ingredients.map((s) => ({ ...s, checked: false }));
   }
 }

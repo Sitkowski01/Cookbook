@@ -10,30 +10,23 @@
   </header>
 
   <div class="obszar lista">
-    <nav class="zakladki" aria-label="Listy">
-      <button
-        *ngFor="let item of items; let i = index"
-        class="filtr"
-        type="button"
-        [class.wybrany]="isActive(i)"
-        (click)="selectItem(i)"
-      >
-        {{ item }}
-      </button>
-    </nav>
+    <p *ngIf="nazwaPrzepisu" class="skad">na: <strong>{{ nazwaPrzepisu }}</strong></p>
 
     <p *ngIf="brakSkladnikow" class="pusto">
-      Lista jest pusta — wejdź tu przyciskiem „Generate shopping list” z przepisu.
+      Lista jest pusta — wejdź tu przyciskiem „Wygeneruj listę zakupów” z przepisu.
     </p>
 
-    <p *ngIf="!brakSkladnikow" class="postep">
-      {{ kupione }} z {{ ingredients.length }} odhaczonych
-    </p>
+    <div *ngIf="!brakSkladnikow" class="rzad">
+      <p class="postep">{{ kupione }} z {{ ingredients.length }} odhaczonych</p>
+      <button class="przycisk-cichy" type="button" (click)="odznaczWszystko()">
+        Odznacz wszystko
+      </button>
+    </div>
 
     <ul class="skladniki">
       <li *ngFor="let ingredient of ingredients; let i = index">
         <label>
-          <input type="checkbox" (change)="updateCheckedStatus(i)" />
+          <input type="checkbox" [checked]="ingredient.checked" (change)="updateCheckedStatus(i)" />
           <span class="nazwa" [class.odhaczony]="ingredient.checked">{{ ingredient.name }}</span>
         </label>
       </li>

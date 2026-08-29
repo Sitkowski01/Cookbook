@@ -1,0 +1,87 @@
+<div class="ekran" [class.bright-mode]="czyJasny()">
+  @if (przepis(); as p) {
+    <header class="pasek">
+      <button class="ikona" type="button" (click)="wstecz()" aria-label="Wstecz">
+        <img src="assets/images/Back.png" alt="" />
+      </button>
+      <h1>{{ p.nazwa }}</h1>
+      <button class="ikona" type="button" (click)="przelaczMotyw()" aria-label="Zmień motyw">
+        <img src="assets/images/Sun.png" alt="" />
+      </button>
+    </header>
+
+    <div class="obszar przepis">
+      @if (danieNadrzedne(); as d) {
+        <p class="okruszek">
+          <a [routerLink]="['/', d.slug]">← {{ d.tytul }}</a>
+        </p>
+      }
+
+      @if (obraz()) {
+        <img class="zdjecie" [src]="obraz()" [alt]="p.nazwa" />
+      }
+
+      <p class="opis">{{ p.opis }}</p>
+
+      <dl class="metryka">
+        <div><dt>Porcje</dt><dd>{{ p.porcje }}</dd></div>
+        <div><dt>Czas</dt><dd>{{ p.czasMinut }} min</dd></div>
+        <div><dt>Składników</dt><dd>{{ p.skladniki.length }}</dd></div>
+      </dl>
+
+      <nav class="zakladki" aria-label="Sekcje przepisu">
+        <button
+          class="filtr"
+          type="button"
+          [class.wybrany]="zakladka() === 'skladniki'"
+          (click)="zakladka.set('skladniki')"
+        >
+          Składniki
+        </button>
+        <button
+          class="filtr"
+          type="button"
+          [class.wybrany]="zakladka() === 'przygotowanie'"
+          (click)="zakladka.set('przygotowanie')"
+        >
+          Przygotowanie
+        </button>
+      </nav>
+
+      @if (zakladka() === 'skladniki') {
+        <ul class="skladniki">
+          @for (s of p.skladniki; track s) {
+            <li>{{ s }}</li>
+          }
+        </ul>
+
+        <button class="przycisk" type="button" (click)="generujListeZakupow()">
+          Wygeneruj listę zakupów
+        </button>
+      } @else {
+        <ol class="kroki">
+          @for (k of p.kroki; track k) {
+            <li>{{ k }}</li>
+          }
+        </ol>
+      }
+
+      @if (rodzenstwo().length) {
+        <section class="podobne">
+          <h2>Inne warianty</h2>
+          <ul>
+            @for (r of rodzenstwo(); track r.slug) {
+              <li>
+                <a [routerLink]="['/przepis', r.parent, r.slug]">{{ r.nazwa }}</a>
+              </li>
+            }
+          </ul>
+        </section>
+      }
+    </div>
+  } @else {
+    <div class="obszar">
+      <p class="pusto">Nie ma takiego przepisu. <a routerLink="/menu">Wróć do menu</a>.</p>
+    </div>
+  }
+</div>
