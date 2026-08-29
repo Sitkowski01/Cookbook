@@ -25,14 +25,13 @@ export class ClassicBobaTeaDetailsComponent {
   ];
   
   servingIngredients: string[] = [
-    'Wide-bore straw',
+    'wide-bore straw',
     'Ice cubes (optional)'
   ];
   
   generalDescription: string[] = [
     'Classic Boba Tea is a popular Taiwanese tea-based drink known for its chewy tapioca pearls, also called boba, at the bottom of the cup. It typically consists of brewed tea, milk, sugar, and tapioca pearls.',
-    ];
-
+  ];
 
   tapiocaPreparationSteps: string[] = [
     'Boil tapioca pearls in water for about 15-20 minutes until soft.',
@@ -49,6 +48,7 @@ export class ClassicBobaTeaDetailsComponent {
     'Pour in milk and add sweet syrups, if you prefer a sweeter taste.',
     'Mix all ingredients.'
   ];
+
   constructor(private router: Router) { }
 
   toggleTheme() {
@@ -71,5 +71,15 @@ export class ClassicBobaTeaDetailsComponent {
 
   isActive(index: number): boolean {
     return index === this.selectedIndex;
+  }
+
+  generateShoppingList() {
+    this.router.navigate(['/classic-boba-tea-shopping-list'], {
+      state: {
+        doughIngredients: this.doughIngredients,
+        fillingIngredients: this.fillingIngredients,
+        servingIngredients: this.servingIngredients
+      }
+    });
   }
 }

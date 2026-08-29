@@ -1,0 +1,30 @@
+<div class="container-fluid menu-page" [ngClass]="{'bright-mode': isBrightMode}">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="gorne-rozstawienie">
+            <div class="back" (click)="goBack()"><img src="../assets/images/Back.png" alt="Back"></div>
+            <div class="wybrany-posilek">Listy zakupów</div>
+            <div class="lupa" (click)="toggleTheme()"><img src="../assets/images/Sun.png" alt="Sun"></div>
+        </div>
+
+        <div class="srodkowe-rozstawienie karuzela" style="margin-top: 2rem;">
+            <div class="element-karuzeli" *ngFor="let item of items; let i = index" 
+                [ngClass]="{'active': isActive(i), 'inactive': !isActive(i)}" 
+                (click)="selectItem(i)">
+                {{ item }}
+            </div>
+        </div>
+  
+        <div class="content mt-5">
+            <div *ngFor="let ingredient of ingredients; let i = index" class="ingredient-item mt-3">
+              <input type="checkbox" id="{{'ingredient-' + i}}" class="checkbox-input" (change)="updateCheckedStatus(i)">
+              <label for="{{'ingredient-' + i}}" class="checkbox-label" >
+                <span class="checkmark"></span>
+                <span class="ingredient-name" [ngClass]="{ 'crossed-out': ingredient.checked }">{{ ingredient.name }}</span>
+              </label>
+            </div>
+          </div>   
+      </div>
+    </div>
+  </div>
+  

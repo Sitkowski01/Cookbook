@@ -76,6 +76,7 @@ import { VegetableSaladComponent } from './kolacja/meal-details/vegetable-salad/
 import { YakisobaComponent } from './kolacja/meal-details/yakisoba/yakisoba.component';
 import { GrilledChickenComponent } from './kolacja/meal-details/grilled-chicken/grilled-chicken.component';
 import { ClassicBobaTeaDetailsComponent } from './sniadanie/meal-details/boba-tea-details/classic-boba-tea-details/classic-boba-tea-details.component';
+import { ClassicBobaTeaShoppingListComponent } from './classic-boba-tea-shopping-list/classic-boba-tea-shopping-list.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent }, 
@@ -155,6 +156,7 @@ const routes: Routes = [
   { path: 'sweet-crepes-details', component: SweetCrepesComponent },
   { path: 'grilled-chicken-details', component: GrilledChickenComponent },
   { path: 'classic-boba-tea-details', component: ClassicBobaTeaDetailsComponent },
+  { path: 'classic-boba-tea-shopping-list', component: ClassicBobaTeaShoppingListComponent },
   
 ];
 
