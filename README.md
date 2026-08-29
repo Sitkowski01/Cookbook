@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Sitkowski01/Cookbook/actions/workflows/ci.yml/badge.svg)](https://github.com/Sitkowski01/Cookbook/actions/workflows/ci.yml)
 
+**[Demo na żywo →](https://sitkowski01.github.io/Cookbook/)**
+
 Aplikacja z przepisami pogrupowanymi według pory posiłku — śniadanie, obiad, kolacja —
 z renderowaniem po stronie serwera.
 

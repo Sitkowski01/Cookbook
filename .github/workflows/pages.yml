@@ -1,0 +1,53 @@
+name: Demo na GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Jeden wdrozony build naraz; nowszy push nie przerywa trwajacego wdrozenia.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # Repozytorium jest serwowane z podkatalogu /Cookbook/, wiec base-href
+      # musi to uwzglednic — inaczej przegladarka szuka bundli w korzeniu domeny.
+      - name: Build
+        run: npx ng build --base-href /Cookbook/
+
+      # Pages nie zna tras Angulara. Bez tego wejscie wprost na /Cookbook/sniadanie
+      # albo odswiezenie strony daje 404 zamiast aplikacji.
+      - name: Fallback dla tras klienckich
+        run: cp dist/cookbook/browser/index.html dist/cookbook/browser/404.html
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist/cookbook/browser
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
