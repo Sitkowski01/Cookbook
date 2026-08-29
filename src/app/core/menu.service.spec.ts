@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { MENU } from './menu.data';
-import { MenuService } from './menu.service';
+import { MenuService, STRONY_PRZEPISOW } from './menu.service';
 
 describe('MenuService', () => {
   let serwis: MenuService;
@@ -35,15 +35,27 @@ describe('MenuService', () => {
       }
     });
 
-    it('flaga dostepne zgadza sie z faktycznym istnieniem wezla', () => {
+    it('flaga dostepne obejmuje takze gotowe strony przepisow', () => {
+      // Przepis ma wlasny komponent i wlasna trase, ale nie jest wezlem menu.
+      // Wczesniej byl przez to oznaczany jako 'wkrotce' i nieklikalny.
       const istniejace = new Set(MENU.map((w) => w.slug));
+
       for (const wezel of MENU) {
-        for (const danie of wezel.dzieci) {
+        for (const danie of serwis.filtruj(wezel.slug)) {
+          const powinno = istniejace.has(danie.slug) || STRONY_PRZEPISOW.has(danie.slug);
           expect(danie.dostepne)
-            .withContext(`${wezel.slug} -> ${danie.slug}`)
-            .toBe(istniejace.has(danie.slug));
+            .withContext(wezel.slug + ' -> ' + danie.slug)
+            .toBe(powinno);
         }
       }
+    });
+
+    it('gotowy przepis boba tea jest klikalny', () => {
+      const warianty = serwis.filtruj('boba-tea-details');
+      const classic = warianty.find((d) => d.slug === 'classic-boba-tea-details');
+
+      expect(classic).toBeDefined();
+      expect(classic!.dostepne).toBeTrue();
     });
   });
 
