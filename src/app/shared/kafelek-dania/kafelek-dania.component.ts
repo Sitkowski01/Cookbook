@@ -17,7 +17,6 @@ import { Component, Input } from '@angular/core';
 export class KafelekDaniaComponent {
   @Input({ required: true }) nazwa = '';
   @Input({ required: true }) obraz = '';
-  @Input() jasnyMotyw = false;
   /** Gdy false, kafelek jest wyszarzony i opisany jako niedostepny. */
   @Input() dostepne = true;
 }

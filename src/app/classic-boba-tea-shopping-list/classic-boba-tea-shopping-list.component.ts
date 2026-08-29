@@ -47,6 +47,11 @@ export class ClassicBobaTeaShoppingListComponent implements OnInit {
     ].map((name) => ({ name, checked: false }));
   }
 
+  /** Ile pozycji jest juz odhaczonych — do licznika postepu. */
+  get kupione(): number {
+    return this.ingredients.filter((s) => s.checked).length;
+  }
+
   /** Lista jest pusta, gdy wejsc tu bezposrednio, z pominieciem przepisu. */
   get brakSkladnikow(): boolean {
     return this.ingredients.length === 0;

@@ -1,3 +1,4 @@
-<div class="meal-background" [style.background-image]="'url(' + backgroundImageUrl + ')'">
-    <div class="meal-name" [style.color]="mealTextColor">{{ mealName }}</div>
-</div>
+<figure class="kategoria-kafelek">
+  <img [src]="backgroundImageUrl" [alt]="mealName" />
+  <figcaption>{{ mealName }}</figcaption>
+</figure>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { MotywService } from '../../../../core/motyw.service';
 
 @Component({
   selector: 'app-classic-boba-tea-details',
@@ -7,7 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./classic-boba-tea-details.component.css']
 })
 export class ClassicBobaTeaDetailsComponent {
-  isBrightMode: boolean = false;
+  private readonly motyw = inject(MotywService);
+
+  get isBrightMode(): boolean {
+    return this.motyw.czyJasny();
+  }
   items: string[] = ['Ingredients', 'Method'];
 
   doughIngredients: string[] = [
@@ -52,7 +58,7 @@ export class ClassicBobaTeaDetailsComponent {
   constructor(private router: Router) { }
 
   toggleTheme() {
-    this.isBrightMode = !this.isBrightMode;
+    this.motyw.przelacz();
   }
 
   goBack(): void {

@@ -1,203 +1,60 @@
-.menu-page {
-    background-color: #222831;
-    min-height: 100vh; 
-    padding-left: 5%;
-    padding-right: 5%;
+.lista {
+  max-width: 620px;
 }
 
-.gorne-rozstawienie{
-    display: flex;
-    justify-content: space-between;
-}
-.dolne-rozstawienie{
-    margin-top: 15%;
-}
-.back{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.lupa{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.srodkowe-rozstawienie{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    gap: 30px;
-    color: white;
-    font-family: "Lobster Two", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-}
-.wybrany-posilek{
-    color: rgb(255, 255, 255);
-    margin-top: 15%;
-    font-size: 24px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.element-karuzeli {
-    display: inline-block;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .active {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  .inactive {
-    color: #646971;
-  }
-  
-  .karuzela {
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .formularz-wyszukiwania {
-    margin-top: 30px;
-    margin-bottom: 20px;
+.zakladki {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+  overflow-x: auto;
 }
 
-.rounded-input {
-    font-family: "Lobster", sans-serif;
-    font-size: 18px;
-    color: #646971;
-    border-radius: 20px;
-    padding: 7px;
-}
-/* bright mode */
-
-.bright-mode {
-    background-color: #fff;
-  }
-  
- .bright-mode .wybrany-posilek{
-    color: black;
- }
-
- .bright-mode .element-karuzeli{
-    color: #8d8a8a;
- }
-
- .bright-mode .active{
-    color: black;
- }
-.bright-mode .back{
-    background-color: #8d8a8a;
+.postep {
+  margin: 0 0 1rem;
+  color: var(--tekst-cichy);
+  font-size: 0.85rem;
 }
 
-.bright-mode .lupa{
-    background-color: #8d8a8a;
+.skladniki {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
 }
 
-.bright-mode .ingredient-name{
-    color: #000000;
+.skladniki li {
+  border: 1px solid var(--obrys);
+  border-radius: var(--promien-maly);
+  background-color: var(--powierzchnia);
+  transition: border-color 0.2s ease;
 }
 
-.bright-mode .checkmark {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%); 
-    width: 30px;
-    height: 30px;
-    border: 2px dashed rgb(0, 0, 0); 
-    border-radius: 3px;
+.skladniki li:hover {
+  border-color: var(--akcent-ciemny);
 }
 
-.bright-mode .checkbox-input:checked ~ .checkbox-label .checkmark {
-    background-color: #8d8a8a; 
-    border-color: #8d8a8a; 
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
 }
 
-.bright-mode .checkbox-input:checked ~ .checkbox-label .checkmark::after {
-    content: '\2713'; 
-    font-size: 24px;
-    color: #ffffff;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-  }
-  
-.bright-mode .crossed-out {
-    color: #8d8a8a; 
-    text-decoration: line-through;
-  }
+input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--akcent);
+  flex: 0 0 auto;
+  cursor: pointer;
+}
 
-.ingredient-item {
-    position: relative;
-    margin-bottom: 10px;
-  }
-  
-  .ingredient-name {
-    color: white;
-    font-family: "Lobster Two", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px; 
-  }
-  .checkbox-input {
-    display: none; 
-  }
-  
-  .checkbox-label {
-    position: relative;
-    padding-left: 25px; 
-    cursor: pointer;
-    display: flex; 
-    align-items: center; 
-  }
-  .crossed-out {
-    color: grey; 
-    text-decoration: line-through;
-  }
-  
-  .checkmark {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%); 
-    width: 30px;
-    height: 30px;
-    border: 2px dashed white; 
-    border-radius: 3px;
-  }
-  
-  .ingredient-item .ingredient-name {
-    margin-left: 20px; 
-  }
-  
-  
-  .checkbox-input:checked ~ .checkbox-label .checkmark {
-    background-color: #646971; 
-    border-color: #646971; 
-  }
-  
-  .checkbox-input:checked ~ .checkbox-label .checkmark::after {
-    content: '\2713';
-    font-size: 24px;
-    color: #222831; 
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-  }
-  
-.pusta-lista {
-  margin-top: 2rem;
-  font-family: system-ui, sans-serif;
-  opacity: 0.75;
+.nazwa {
+  transition: color 0.2s ease;
+}
+
+.odhaczony {
+  color: var(--tekst-cichy);
+  text-decoration: line-through;
 }

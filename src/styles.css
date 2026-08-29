@@ -1,1 +1,265 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ * System stylów Cookbooka.
+ *
+ * Paleta, typografia i wspólne elementy w jednym miejscu. Wcześniej każdy
+ * z 82 komponentów wiózł własny arkusz z tymi samymi wartościami wpisanymi
+ * ręcznie, a układ trzymał się procentowych marginesów (`padding: 6%`,
+ * `margin-top: 15%`), które na monitorze rozjeżdżały się na kilkaset pikseli.
+ */
+
+:root {
+  /* Kolory z pierwotnego projektu — zostają, zmienia się tylko sposób użycia. */
+  --tlo: #222831;
+  --powierzchnia: #31363f;
+  --powierzchnia-jasna: #3c424d;
+  --obrys: #444b57;
+  --tekst: #eeeeee;
+  --tekst-cichy: #a2a9b4;
+  --akcent: #d7cb63;
+  --akcent-ciemny: #b5aa4a;
+
+  --promien: 14px;
+  --promien-maly: 10px;
+  --cien: 0 12px 28px rgb(0 0 0 / 35%);
+  --szerokosc: 1180px;
+
+  --font-naglowek: 'Lobster', cursive;
+  --font-nawigacja: 'Lobster Two', cursive;
+  --font-przycisk: 'Monda', sans-serif;
+  --font-tekst: 'Poppins', system-ui, sans-serif;
+}
+
+/* Tryb jasny — ten sam zestaw zmiennych, inne wartości. */
+.bright-mode {
+  --tlo: #f4f1e8;
+  --powierzchnia: #ffffff;
+  --powierzchnia-jasna: #efeadc;
+  --obrys: #ddd6c4;
+  --tekst: #24262b;
+  --tekst-cichy: #6d7280;
+  --akcent: #a8952f;
+  --akcent-ciemny: #8a7a26;
+  --cien: 0 12px 28px rgb(80 70 40 / 12%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--tlo);
+  color: var(--tekst);
+  font-family: var(--font-tekst);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--akcent);
+  outline-offset: 3px;
+}
+
+/* ---------- Układ strony ---------- */
+
+.ekran {
+  min-height: 100vh;
+  background-color: var(--tlo);
+  color: var(--tekst);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.obszar {
+  width: min(var(--szerokosc), 100%);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem) 4rem;
+}
+
+/* ---------- Pasek górny ---------- */
+
+.pasek {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 2rem);
+  background-color: color-mix(in srgb, var(--tlo) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.pasek h1 {
+  margin: 0;
+  font-family: var(--font-naglowek);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Okrągły przycisk ikony. Wcześniej to byly bloki z `padding: 6%`,
+   ktore na szerokim ekranie rosly do 170 px. */
+.ikona {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--obrys);
+  border-radius: 50%;
+  background-color: var(--powierzchnia);
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.ikona:hover {
+  background-color: var(--powierzchnia-jasna);
+  transform: translateY(-1px);
+}
+
+.ikona img {
+  width: 18px;
+  height: 18px;
+}
+
+/* W trybie jasnym ikony sa czarne na bialym tle — bez tego znikaja. */
+.bright-mode .ikona img {
+  filter: invert(1);
+}
+
+/* ---------- Filtr kuchni ---------- */
+
+.filtry {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 1rem;
+  scrollbar-width: none;
+}
+
+.filtry::-webkit-scrollbar {
+  display: none;
+}
+
+.filtr {
+  flex: 0 0 auto;
+  border: 1px solid var(--obrys);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--tekst-cichy);
+  font-family: var(--font-nawigacja);
+  font-size: 1rem;
+  font-style: italic;
+  padding: 0.35rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.filtr:hover {
+  color: var(--tekst);
+  border-color: var(--akcent-ciemny);
+}
+
+.filtr.wybrany {
+  background-color: var(--akcent);
+  border-color: var(--akcent);
+  color: #24262b;
+}
+
+/* ---------- Wyszukiwarka ---------- */
+
+.szukajka {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding: 0.15rem 0.9rem;
+  border: 1px solid var(--obrys);
+  border-radius: 999px;
+  background-color: var(--powierzchnia);
+}
+
+.szukajka input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: var(--tekst);
+  font: inherit;
+  padding: 0.6rem 0;
+}
+
+.szukajka input:focus {
+  outline: none;
+}
+
+.szukajka input::placeholder {
+  color: var(--tekst-cichy);
+}
+
+/* ---------- Siatka dań ---------- */
+
+.siatka {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Stany puste ---------- */
+
+.pusto {
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--obrys);
+  border-radius: var(--promien);
+  color: var(--tekst-cichy);
+  text-align: center;
+}
+
+.pusto a {
+  color: var(--akcent);
+}
+
+/* ---------- Przycisk ---------- */
+
+.przycisk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 2px solid var(--akcent);
+  border-radius: 12px;
+  background-color: var(--akcent);
+  color: #24262b;
+  font-family: var(--font-przycisk);
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.przycisk:hover {
+  background-color: transparent;
+  border-color: var(--tekst);
+  color: var(--tekst);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

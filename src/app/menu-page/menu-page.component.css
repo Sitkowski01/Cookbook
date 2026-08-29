@@ -1,34 +1,18 @@
-.menu-page{
-    background-color: #222831;
-    height: 100vh;
-    padding-left: 5%;
-    padding-right: 5%;
+.pytanie {
+  margin: 1rem 0 2rem;
+  font-family: var(--font-naglowek);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  text-align: center;
 }
-.gorne-rozstawienie{
-    display: flex;
-    justify-content: space-between;
+
+.kategorie {
+  display: grid;
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
-.dolne-rozstawienie{
-    margin-top: 15%;
-}
-.slonce{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.lupa{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.srodkowe-rozstawienie{
-    color: white;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
+
+.kategoria {
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--promien);
 }

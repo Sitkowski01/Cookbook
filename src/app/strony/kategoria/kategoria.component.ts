@@ -49,6 +49,11 @@ export class KategoriaComponent {
     this.menu.filtruj(this.slug(), this.fraza(), this.wybranaKuchnia())
   );
 
+  /** Ile widocznych pozycji nie ma jeszcze wlasnej podstrony. */
+  readonly brakujace = computed(
+    () => this.widoczne().filter((d) => !d.dostepne).length
+  );
+
   przelaczSzukanie(): void {
     this.szukanieOtwarte.update((v) => !v);
     if (!this.szukanieOtwarte()) this.fraza.set('');

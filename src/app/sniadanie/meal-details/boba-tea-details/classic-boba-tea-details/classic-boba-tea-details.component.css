@@ -1,157 +1,50 @@
-.menu-page {
-    background-color: #222831;
-    min-height: 100vh; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    padding-left: 5%;
-    padding-right: 5%;
-}
-.gorne-rozstawienie{
-    display: flex;
-    justify-content: space-between;
-}
-.dolne-rozstawienie{
-    margin-top: 15%;
-}
-.back{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.lupa{
-    display: flex;
-    padding: 6%;
-    background-color: #31363F;
-    border-radius: 8px;
-    margin-top: 10%;
-}
-.srodkowe-rozstawienie{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    gap: 30px;
-    color: white;
-    font-family: "Lobster Two", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 20px;
-}
-.wybrany-posilek{
-    color: white;
-    margin-top: 15%;
-    font-size: 24px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.element-karuzeli {
-    display: inline-block;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .active {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  .inactive {
-    color: #646971;
-  }
-  
-  .karuzela {
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-  }
-  .formularz-wyszukiwania {
-    margin-top: 30px;
-    margin-bottom: 20px;
+.przepis {
+  max-width: 760px;
 }
 
-.rounded-input {
-    font-family: "Lobster", sans-serif;
-    font-size: 18px;
-    color: #646971;
-    border-radius: 20px;
-    padding: 7px;
-}
-/* bright mode */
-
-.bright-mode {
-    background-color: #fff;
-  }
-  
- .bright-mode .wybrany-posilek{
-    color: black;
- }
-
- .bright-mode .element-karuzeli{
-    color: #8d8a8a;
- }
-
- .bright-mode .active{
-    color: black;
- }
-.bright-mode .back{
-    background-color: #8d8a8a;
+.zdjecie {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--promien);
+  box-shadow: var(--cien);
 }
 
-.bright-mode .lupa{
-    background-color: #8d8a8a;
-}
-.content{
-    color: white;
-}
-.title{
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-}
-.ingredient-title{
-    font-size: 20px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.ingredient{
-    font-size: 16px;
-    font-family: "Lobster Two", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-.generate-button{
-    display: flex;
-    justify-content: right;
-}
-.yellow-button{
-    background-color:#D7CB63;
-    padding: 4%;
-    border-radius: 18px;
-    font-size: 17px;
-    font-family: "Monda", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.yellow-button:hover {
-    border: solid white 2px; 
-    color: white; 
-    background-color: transparent; 
+.zakladki {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.25rem 0 1.5rem;
 }
 
-.bright-mode .ingredient{
-    color: black;
- }
+.tresc h2 {
+  margin: 1.75rem 0 0.5rem;
+  font-family: var(--font-naglowek);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--akcent);
+}
 
- .bright-mode .ingredient-title{
-    color: black;
- }
+.tresc ul,
+.tresc ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.4rem;
+}
 
- .bright-mode .title{
-    color: black;
- }
+.tresc li {
+  color: var(--tekst);
+}
+
+.tresc li::marker {
+  color: var(--tekst-cichy);
+}
+
+.wstep {
+  margin: 0 0 1rem;
+  color: var(--tekst-cichy);
+}
+
+.tresc .przycisk {
+  margin-top: 2rem;
+}

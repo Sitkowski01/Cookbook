@@ -1,16 +1,32 @@
-.meal-background{
-    height: 23vh;
-    background-size: cover;
-    width: 350px;
-    border-radius: 12px;
-    font-size: 24px;
-    color: black;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.kategoria-kafelek {
+  position: relative;
+  display: grid;
+  margin: 0;
+  border-radius: var(--promien);
+  overflow: hidden;
+  box-shadow: var(--cien);
+  transition: transform 0.2s ease;
 }
-.meal-name{
-    font-size: 24px;
-    margin-left: 1.2rem;
-    padding-top: 1rem;
+
+.kategoria-kafelek img {
+  grid-area: 1 / 1;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+figcaption {
+  grid-area: 1 / 1;
+  align-self: end;
+  padding: 3rem 1.25rem 1rem;
+  background: linear-gradient(to top, rgb(0 0 0 / 80%), transparent);
+  color: #fff;
+  font-family: var(--font-naglowek);
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+}
+
+a:hover .kategoria-kafelek,
+a:focus-visible .kategoria-kafelek {
+  transform: translateY(-4px);
 }

@@ -1,10 +1,7 @@
-<div
-  class="meal-background"
-  [class.niedostepne]="!dostepne"
-  [style.background-image]="'url(' + obraz + ')'"
->
-  <div class="meal-name" [style.color]="jasnyMotyw ? '#EEEEEE' : 'white'">
-    {{ nazwa }}
-  </div>
-  <div class="znacznik-wkrotce" *ngIf="!dostepne">wkrótce</div>
-</div>
+<figure class="kafelek" [class.niedostepne]="!dostepne">
+  <img [src]="obraz" [alt]="nazwa" loading="lazy" />
+  <figcaption>{{ nazwa }}</figcaption>
+  @if (!dostepne) {
+    <span class="wkrotce">wkrótce</span>
+  }
+</figure>
